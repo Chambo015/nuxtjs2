@@ -1,10 +1,14 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 const config: Config = {
     darkMode: ["class"],
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./features/**/*.{js,ts,jsx,tsx,mdx}",
+    "./widgets/**/*.{js,ts,jsx,tsx,mdx}",
+    "./shared/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -21,7 +25,7 @@ const config: Config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
+  				DEFAULT: '#4280EF',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			secondary: {
@@ -55,7 +59,11 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+			fontFamily: {
+        inter: ['var(--font-inter)', ...fontFamily.sans],
+        "euclid-circular": ['var(--font-euclid-circular)', ...fontFamily.sans],
+      }
   	}
   },
   plugins: [require("tailwindcss-animate")],
