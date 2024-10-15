@@ -76,3 +76,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+.hero-section {
+  /* Vertical lines */
+  background-image: url("/image/bg-block.png");
+  background-size: 77px;
+}
