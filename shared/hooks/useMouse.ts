@@ -9,7 +9,7 @@ type MousePosition = {
   elementPositionY: number;
 };
 
-export function useMouse<T extends Element>(): [ MousePosition, React.MutableRefObject<T>] {
+export function useMouse<T extends Element>(): [ MousePosition, React.RefObject<T>] {
   const [state, setState] = React.useState<MousePosition>({
     x: 0,
     y: 0,
