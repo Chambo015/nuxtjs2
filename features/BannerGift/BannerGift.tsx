@@ -57,7 +57,7 @@ export const BannerGift = () => {
     const endY = div2?.offsetTop + div2.clientHeight + 10
   
     // Рисуем линию со стрелкой
-    drawLineWithArrow(ctx, startX, startY, endX, endY, canvas.offsetWidth, canvas.offsetHeight);
+    drawLineWithArrow(ctx!, startX, startY, endX, endY, canvas.offsetWidth, canvas.offsetHeight);
   }
 
   useEffect(() => {
