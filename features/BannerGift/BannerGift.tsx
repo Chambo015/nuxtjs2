@@ -4,12 +4,12 @@ import {Button} from '@/components/ui/button';
 import React, { useEffect } from 'react';
 
 export const BannerGift = () => {
-  function findAngle(sx, sy, toX, toY) {
+  function findAngle(sx: number, sy: number, toX: number, toY: number) {
     // make sx and sy at the zero point
     return Math.atan((toY - sy) / (toX - sx));
 }
 
-  function drawLineWithArrow(ctx, fromX, fromY, toX, toY, width, heigh) {
+  function drawLineWithArrow(ctx: CanvasRenderingContext2D, fromX: number, fromY: number, toX: number, toY: number, width: number, heigh: number) {
     const headlen = 20;
 
     const sx = width / 100 * 70 // точка X к которой изгибается линия
@@ -36,22 +36,18 @@ export const BannerGift = () => {
     ctx.moveTo(toX, toY);
     ctx.lineTo(toX - (headlen * directionArrow) * Math.cos(angle + Math.PI / 6), toY - (headlen * directionArrow) * Math.sin(angle + Math.PI / 6));
     ctx.stroke();
-
-    console.log("@aaa", (toX - sx) > 0 ? 1 : -1 );
   }
   
   function draw() {
     const canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
     canvas.width  = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+    
   
     // Получаем координаты элементов div
     const div1 = document.getElementById('start1') as HTMLElement ;
     const div2 = document.getElementById('end1') as HTMLElement ;
-
-    console.log("@div1", div1?.clientWidth);
-    console.log("@div2", div2?.offsetTop);
   
     // Вычисляем начальную и конечные координаты линии
     const startX = div1?.offsetLeft + (div1?.clientWidth)
@@ -86,7 +82,7 @@ export const BannerGift = () => {
         <div className='flex items-center justify-center grow'>
           <div className='flex bg-white py-5 px-[34px] gap-5 rounded-[27px] relative bottom-[50px] -rotate-12' id="end1">
             <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" fill="none" viewBox="0 0 49 49">
-              <g clip-path="url(#a)">
+              <g clipPath="url(#a)">
                 <path
                   fill="#4280EF"
                   d="M40.506 14.593h-3.464a10.24 10.24 0 0 0 3.464-7.974 1.993 1.993 0 1 0-3.986 0c0 5.227-4.727 7.037-8.32 7.657a18.602 18.602 0 0 0 2.34-7.657 5.98 5.98 0 0 0-11.96 0 18.6 18.6 0 0 0 2.34 7.657c-3.594-.62-8.32-2.43-8.32-7.657a1.994 1.994 0 0 0-3.987 0 10.24 10.24 0 0 0 3.464 7.974H8.613a7.973 7.973 0 0 0-7.974 7.973v1.993a3.987 3.987 0 0 0 3.987 3.987v9.967a9.978 9.978 0 0 0 9.967 9.967h19.933a9.979 9.979 0 0 0 9.967-9.967v-9.967a3.987 3.987 0 0 0 3.987-3.987v-1.993a7.973 7.973 0 0 0-7.974-7.973ZM24.56 4.626a1.993 1.993 0 0 1 1.994 1.993 15.37 15.37 0 0 1-1.994 6.006 15.368 15.368 0 0 1-1.993-6.006 1.993 1.993 0 0 1 1.993-1.993ZM4.626 22.566a3.987 3.987 0 0 1 3.987-3.987h13.953v5.98H4.626v-1.993Zm3.987 15.947v-9.967h13.953v15.947h-7.973a5.98 5.98 0 0 1-5.98-5.98Zm31.893 0a5.98 5.98 0 0 1-5.98 5.98h-7.973V28.546h13.953v9.967ZM26.553 24.559v-5.98h13.953a3.987 3.987 0 0 1 3.987 3.987v1.993h-17.94Z"
