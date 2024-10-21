@@ -8,6 +8,7 @@ import SiteIcon from '@/shared/icons/site.svg';
 import TimeTwentyFourIcon from '@/shared/icons/time-24.svg';
 import AppHeader from '@/widgets/AppHeader/AppHeader';
 import Image from 'next/image';
+import { BannerGift } from '@/features/BannerGift/BannerGift';
 
 export default function Page() {
   return (
@@ -134,6 +135,7 @@ export default function Page() {
         </div>
       </section>
       <СollectingСontacts />
+      <BannerGift />
       <div className="container mx-auto mt-[75px]">
         <IdentificationCalculator />
       </div>
