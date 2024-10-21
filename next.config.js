@@ -1,8 +1,8 @@
-import withSvgr from 'next-plugin-svgr';
+const withSvgr = require('next-plugin-svgr')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
 };
 
-export default withSvgr(nextConfig);
+module.exports = withSvgr(nextConfig);
