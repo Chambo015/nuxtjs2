@@ -1,69 +1,89 @@
-"use client"
+"use client";
 
-import {Button} from '@/components/ui/button';
-import React, { useEffect } from 'react';
+import { Button } from "@/components/ui/button";
+import React, { useEffect } from "react";
 
 export const BannerGift = () => {
   function findAngle(sx: number, sy: number, toX: number, toY: number) {
     // make sx and sy at the zero point
     return Math.atan((toY - sy) / (toX - sx));
-}
+  }
 
-  function drawLineWithArrow(ctx: CanvasRenderingContext2D, fromX: number, fromY: number, toX: number, toY: number, width: number, heigh: number) {
+  function drawLineWithArrow(
+    ctx: CanvasRenderingContext2D,
+    fromX: number,
+    fromY: number,
+    toX: number,
+    toY: number,
+    width: number,
+    heigh: number
+  ) {
     const headlen = 20;
 
-    const sx = width / 100 * 70 // точка X к которой изгибается линия
-    const sy = heigh / 100 * 95 // точка Y к которой изгибается линия
+    const sx = (width / 100) * 70; // точка X к которой изгибается линия
+    const sy = (heigh / 100) * 95; // точка Y к которой изгибается линия
 
-    const directionArrow = ((toX - sx) > 0) || ((toY - sy) > 0) ? 1 : -1 // 1 или -1
-
+    const directionArrow = toX - sx > 0 || toY - sy > 0 ? 1 : -1; // 1 или -1
 
     // Рисуется Основная линия
     ctx.beginPath();
-    ctx.lineWidth = 4
+    ctx.lineWidth = 4;
     ctx.setLineDash([6, 6]);
-    ctx.strokeStyle = 'white';
+    ctx.strokeStyle = "white";
     ctx.moveTo(fromX, fromY);
     ctx.quadraticCurveTo(sx, sy, toX, toY); // quadraticCurveTo рисует линию с скруглением
     ctx.stroke();
 
-    // Рисуется стрелка 
+    // Рисуется стрелка
     ctx.beginPath();
     ctx.setLineDash([]); // Убираем пунктиры для стрелки
     var angle = findAngle(sx, sy, toX, toY);
     ctx.moveTo(toX, toY);
-    ctx.lineTo(toX - (headlen * directionArrow) * Math.cos(angle - Math.PI / 6), toY - (headlen * directionArrow) * Math.sin(angle - Math.PI / 6));
+    ctx.lineTo(
+      toX - headlen * directionArrow * Math.cos(angle - Math.PI / 6),
+      toY - headlen * directionArrow * Math.sin(angle - Math.PI / 6)
+    );
     ctx.moveTo(toX, toY);
-    ctx.lineTo(toX - (headlen * directionArrow) * Math.cos(angle + Math.PI / 6), toY - (headlen * directionArrow) * Math.sin(angle + Math.PI / 6));
+    ctx.lineTo(
+      toX - headlen * directionArrow * Math.cos(angle + Math.PI / 6),
+      toY - headlen * directionArrow * Math.sin(angle + Math.PI / 6)
+    );
     ctx.stroke();
   }
-  
-  function draw() {
-    const canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
-    
-  
-    // Получаем координаты элементов div
-    const div1 = document.getElementById('start1') as HTMLElement ;
-    const div2 = document.getElementById('end1') as HTMLElement ;
-  
-    // Вычисляем начальную и конечные координаты линии
-    const startX = div1?.offsetLeft + (div1?.clientWidth)
-    const startY = div1?.offsetTop + (div1?.clientHeight / 2)
 
-    const endX = div2?.offsetLeft + div2.clientWidth / 2
-    const endY = div2?.offsetTop + div2.clientHeight + 10
-  
+  function draw() {
+    const canvas = document.getElementById("myCanvas") as HTMLCanvasElement;
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+
+    // Получаем координаты элементов div
+    const div1 = document.getElementById("start1") as HTMLElement;
+    const div2 = document.getElementById("end1") as HTMLElement;
+
+    // Вычисляем начальную и конечные координаты линии
+    const startX = div1?.offsetLeft + div1?.clientWidth;
+    const startY = div1?.offsetTop + div1?.clientHeight / 2;
+
+    const endX = div2?.offsetLeft + div2.clientWidth / 2;
+    const endY = div2?.offsetTop + div2.clientHeight + 10;
+
     // Рисуем линию со стрелкой
-    drawLineWithArrow(ctx!, startX, startY, endX, endY, canvas.offsetWidth, canvas.offsetHeight);
+    drawLineWithArrow(
+      ctx!,
+      startX,
+      startY,
+      endX,
+      endY,
+      canvas.offsetWidth,
+      canvas.offsetHeight
+    );
   }
 
   useEffect(() => {
-    draw()
-    window.onresize = draw
-  }, [])
+    draw();
+    window.onresize = draw;
+  }, []);
 
   return (
     <article className="container mx-auto mt-[65px]">
@@ -72,16 +92,32 @@ export const BannerGift = () => {
           <h3 className="text-white text-[45px] leading-tight font-medium max-w-[630px]">
             Начните получать в 2-3 раза больше горячих лидов уже сегодня
           </h3>
-          <p className="text-white text-sm leading-[22px] max-w-[530px] mt-[15px]" id="start1">
-            Зарегистрируйтесь прямо сейчас и получите 40 идентификаций бесплатно, чтобы проверить как это работает
+          <p
+            className="text-white text-sm leading-[22px] max-w-[530px] mt-[15px]"
+            id="start1"
+          >
+            Зарегистрируйтесь прямо сейчас и получите 40 идентификаций
+            бесплатно, чтобы проверить как это работает
           </p>
-          <Button variant={'link'} className="bg-white text-primary max-w-[315px] w-[315px] mt-[15px] underline">
+          <Button
+            variant={"link"}
+            className="bg-white text-primary max-w-[315px] w-[315px] mt-[15px] underline"
+          >
             Попробовать бесплатно
           </Button>
         </div>
-        <div className='flex items-center justify-center grow'>
-          <div className='flex bg-white py-5 px-[34px] gap-5 rounded-[27px] relative bottom-[50px] -rotate-12' id="end1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" fill="none" viewBox="0 0 49 49">
+        <div className="flex items-center justify-center grow">
+          <div
+            className="flex bg-white py-5 px-[34px] gap-5 rounded-[27px] relative bottom-[50px] -rotate-12"
+            id="end1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="49"
+              height="49"
+              fill="none"
+              viewBox="0 0 49 49"
+            >
               <g clipPath="url(#a)">
                 <path
                   fill="#4280EF"
@@ -94,13 +130,17 @@ export const BannerGift = () => {
                 </clipPath>
               </defs>
             </svg>
-            <div className='text-center text-xl font-medium'>
-              <p className='text-primary pb-1 border-b-2 border-primary'>Плюс 30 идентификаций в подарок</p>
-              <p className='text-[#434343]/80 font-normal pt-0.5'>Получите сразу после регистрации</p>
+            <div className="text-center text-xl font-medium">
+              <p className="text-primary pb-1 border-b-2 border-primary">
+                Плюс 30 идентификаций в подарок
+              </p>
+              <p className="text-[#434343]/80 font-normal pt-0.5">
+                Получите сразу после регистрации
+              </p>
             </div>
           </div>
         </div>
-        <canvas id="myCanvas" className='absolute inset-0 size-full'></canvas>
+        <canvas id="myCanvas" className="absolute inset-0 size-full"></canvas>
       </div>
     </article>
   );
