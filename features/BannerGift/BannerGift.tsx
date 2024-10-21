@@ -4,8 +4,6 @@ import {Button} from '@/components/ui/button';
 import React, { useEffect } from 'react';
 
 export const BannerGift = () => {
-
-
   function findAngle(sx, sy, toX, toY) {
     // make sx and sy at the zero point
     return Math.atan((toY - sy) / (toX - sx));

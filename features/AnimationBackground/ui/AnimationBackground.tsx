@@ -8,7 +8,7 @@ interface AnimationBackgroundProps {
 }
 
 export const AnimationBackground = ({children}: AnimationBackgroundProps) => {
-  const [mouse, ref] = useMouse();
+  const [mouse, ref] = useMouse<HTMLDivElement>();
 
   return (
     <div
