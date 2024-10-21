@@ -4,12 +4,12 @@ import {Button} from '@/components/ui/button';
 import React, { useEffect } from 'react';
 
 export const BannerGift = () => {
-  function findAngle(sx, sy, toX, toY) {
+  function findAngle(sx:number, sy:number, toX:number, toY:number) {
     // make sx and sy at the zero point
     return Math.atan((toY - sy) / (toX - sx));
 }
 
-  function drawLineWithArrow(ctx, fromX, fromY, toX, toY, width, heigh) {
+  function drawLineWithArrow(ctx: CanvasRenderingContext2D, fromX: number, fromY: number, toX:number, toY:number, width:number, heigh:number) {
     const headlen = 20;
 
     const sx = width / 100 * 70 // точка X к которой изгибается линия
@@ -61,7 +61,7 @@ export const BannerGift = () => {
     const endY = div2?.offsetTop + div2.clientHeight + 10
   
     // Рисуем линию со стрелкой
-    drawLineWithArrow(ctx, startX, startY, endX, endY, canvas.offsetWidth, canvas.offsetHeight);
+    drawLineWithArrow(ctx!, startX, startY, endX, endY, canvas.offsetWidth, canvas.offsetHeight);
   }
 
   useEffect(() => {
