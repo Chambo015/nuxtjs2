@@ -8,6 +8,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./features/**/*.{js,ts,jsx,tsx,mdx}",
     "./widgets/**/*.{js,ts,jsx,tsx,mdx}",
+    "./entities/**/*.{js,ts,jsx,tsx,mdx}",
     "./shared/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -55,11 +56,11 @@ const config: Config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
-  		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		},
+  		// borderRadius: {
+  		// 	lg: 'var(--radius)',
+  		// 	md: 'calc(var(--radius) - 2px)',
+  		// 	sm: 'calc(var(--radius) - 4px)'
+  		// },
 			fontFamily: {
         inter: ['var(--font-inter)', ...fontFamily.sans],
         "euclid-circular": ['var(--font-euclid-circular)', ...fontFamily.sans],

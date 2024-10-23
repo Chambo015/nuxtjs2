@@ -9,6 +9,8 @@ import TimeTwentyFourIcon from '@/shared/icons/time-24.svg';
 import AppHeader from '@/widgets/AppHeader/AppHeader';
 import Image from 'next/image';
 import { BannerGift } from '@/features/BannerGift/BannerGift';
+import Spline from '@splinetool/react-spline/next';
+import { Section05, Section07, Section08, Section14 } from '@/entities/landing-sections';
 
 export default function Home() {
   return (
@@ -37,17 +39,19 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Image
+            {/* <Image
               src="/image/hero.png"
               width={920}
               height={920}
               alt="cubs"
               quality={100}
               className="absolute right-0 bottom-0 pointer-events-none "
-            />
-            {/* <div className='absolute right-0 bottom-0 size-[900px]'>
-          <iframe src='https://my.spline.design/animatedmockupiphone14pro-bc3fe682fc15790c761400e3fd6497c9/' frameborder='0' width='100%' height='100%'></iframe>
-          </div> */}
+            /> */}
+            <div className='absolute right-0 bottom-0 size-[900px]'>
+            {/* <Spline style={{background: 'none'}}
+        scene="https://prod.spline.design/UKqVR2cGwPCOgft2/scene.splinecode" 
+      /> */}
+          </div>
           </section>
         </div>
       </AnimationBackground>
@@ -136,9 +140,13 @@ export default function Home() {
       </section>
       <СollectingСontacts />
       <BannerGift />
+      <Section05 />
       <div className="container mx-auto mt-[75px]">
         <IdentificationCalculator />
       </div>
+      <Section07 />
+      <Section08 />
+      <Section14 />
     </div>
   );
 }
