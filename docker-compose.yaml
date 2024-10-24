@@ -5,9 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        BACKEND_BASE_URL: https://d5dtka2iprpa79g4qia0.apigw.yandexcloud.net/api
-        NEXT_PUBLIC_BACKEND_BASE_URL: https://d5dtka2iprpa79g4qia0.apigw.yandexcloud.net/api
     restart: always
     ports:
       - 3000:3000
