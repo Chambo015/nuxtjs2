@@ -49,9 +49,9 @@ export default function Home() {
               className="absolute right-0 bottom-0 pointer-events-none "
             /> */}
             <div className='absolute right-0 bottom-0 size-[900px]'>
-            {/* <Spline style={{background: 'none'}}
+            <Spline style={{background: 'none'}}
         scene="https://prod.spline.design/UKqVR2cGwPCOgft2/scene.splinecode" 
-      /> */}
+      />
           </div>
           </section>
         </div>
