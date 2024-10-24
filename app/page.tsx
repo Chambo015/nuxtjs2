@@ -10,7 +10,7 @@ import AppHeader from '@/widgets/AppHeader/AppHeader';
 import Image from 'next/image';
 import { BannerGift } from '@/features/BannerGift/BannerGift';
 import Spline from '@splinetool/react-spline/next';
-import { Section05, Section07, Section08, Section14 } from '@/entities/landing-sections';
+import { Section05, Section07, Section08, Section10, Section11, Section12, Section14 } from '@/entities/landing-sections';
 
 export default function Home() {
   return (
@@ -146,6 +146,9 @@ export default function Home() {
       </div>
       <Section07 />
       <Section08 />
+      <Section10 />
+      <Section11 />
+      <Section12 />
       <Section14 />
     </div>
   );

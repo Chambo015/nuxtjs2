@@ -65,6 +65,54 @@ export const ModelSection08 = [
   },
 ]
 
+export const ModelSection10 = [
+  {
+    title: "Персональный менеджер",
+    note: "Наш специалист поможет вам настроить сервис и даст рекомендации для достижения наилучших результатов."
+  },
+  {
+    title: "Обучающие материалы",
+    note: "Доступ к руководствам и инструкциям по использованию сервиса."
+  },
+  {
+    title: "Техническая поддержка",
+    note: "Быстрая помощь по любым техническим вопросам."
+  },
+]
+
+export const ModelSection11 = [
+  {
+    title: "amoCrm",
+    link: null,
+    img: "/image/amoCrm.png"
+  },
+  {
+    title: "bitrix",
+    link: null,
+    img: "/image/bitrix.png"
+  },
+  {
+    title: "retail",
+    link: null,
+    img: "/image/retail.png"
+  },
+  {
+    title: "roistat",
+    link: null,
+    img: "/image/roistat.png"
+  },
+  {
+    title: "albato",
+    link: null,
+    img: "/image/albato.png"
+  },
+  {
+    title: "telegram",
+    link: null,
+    img: "/image/telegram.png"
+  },
+]
+
 export interface ModelFAQType {
   id: number;
   icon: JSX.Element;
