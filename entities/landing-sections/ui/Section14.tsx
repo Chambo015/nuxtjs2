@@ -41,10 +41,10 @@ const Accordion = ({item, expanded, setExpanded}: AccordionProps) => {
       <header
         
         onClick={() => setExpanded(isOpen ? false : item.id)}
-        className='border border-[#E5E5E5] rounded-[20px] py-3 px-[15px] flex gap-[15px] items-center cursor-pointer'
+        className='border border-[#E5E5E5] rounded-[20px] py-3 px-[15px] flex gap-[15px] items-center cursor-pointer h-[70px]'
       >
         <div className='bg-[#F9FAFB] size-[50px] rounded-full flex items-center justify-center text-primary text-[15px] shrink-0'>{item.icon}</div>
-        <p className='text-lg text-black font-medium'>{item.title}</p>
+        <p className='text-lg text-black font-medium leading-tight'>{item.title}</p>
         <motion.div
           initial={false}
           animate={{rotate: isOpen ? '180deg' : '0deg'}}
@@ -65,7 +65,9 @@ const Accordion = ({item, expanded, setExpanded}: AccordionProps) => {
               collapsed: {opacity: 0, height: 0},
             }}
             transition={{duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98]}}>
-            <p className='px-5 py-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque nulla quis porro minima sint ipsum perferendis fugit veniam debitis eaque, voluptates, deserunt, labore quo provident placeat eveniet velit tenetur. Nihil?</p>
+            <div className='px-5 py-4 [&_ul]:list-disc [&_ul]:list-inside [&_ul]:my-2 text-black/80'>
+              {item.note}
+            </div>
           </motion.section>
         )}
       </AnimatePresence>
