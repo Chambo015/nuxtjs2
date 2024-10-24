@@ -14,10 +14,6 @@ COPY . .
 
 # Environment variables must be present at build time
 # https://github.com/vercel/next.js/discussions/14030
-ARG BACKEND_BASE_URL
-ENV BACKEND_BASE_URL=${BACKEND_BASE_URL}
-ARG NEXT_PUBLIC_BACKEND_BASE_URL
-ENV NEXT_PUBLIC_BACKEND_BASE_URL=${NEXT_PUBLIC_BACKEND_BASE_URL}
 
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line to disable telemetry at build time
