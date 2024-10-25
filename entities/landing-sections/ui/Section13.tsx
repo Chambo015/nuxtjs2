@@ -12,7 +12,7 @@ export const Section13 = () => {
           <Heading className='text-center text-white max-w-[830px] mx-auto'>Присоединяйтесь к списку ожидания и получите преимущество!</Heading>
           <p className='text-white/80 text-sm text-center mt-2.5'>Не упустите шанс быть среди первых, кто опробует наш инновационный сервис и увеличит продажи без дополнительных затрат на рекламу.</p>
           <div className='grid grid-cols-2 justify-center gap-5 max-w-[830px] mx-auto mt-5'>
-              {ModelSection13.map(item => <div className='bg-[#F5F7F9]/40 backdrop-blur-sm rounded-[20px] pt-[18px] pb-[15px] px-[14px] max-w-[400px]'>
+              {ModelSection13.map(item => <div key={item.title} className='bg-[#F5F7F9]/40 backdrop-blur-sm rounded-[20px] pt-[18px] pb-[15px] px-[14px] max-w-[400px]'>
                 <div className='size-[45px] rounded-full bg-white flex items-center justify-center'>
                     {item.icon}
                 </div>

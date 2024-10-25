@@ -1,4 +1,7 @@
+export * from "./Section01"
+export * from "./Section02"
 export * from "./Section05"
+export * from "./Section06"
 export * from "./Section07"
 export * from "./Section08"
 export * from "./Section10"

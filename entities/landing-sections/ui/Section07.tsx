@@ -75,7 +75,6 @@ export const Section07 = () => {
           <div className={cn("col-span-2 rounded-[20px] bg-[#F5F7F9] flex items-center justify-center py-8 transition-all duration-500 px-9", activeTab === 2 ? 'bg-primary' : 'bg-[#F5F7F9]')}>
           <Image src="/image/sec7_3.png" width={630} height={210} alt="how-it-works" quality={100} className='object-contain shadow-md rounded-[10px]' />
           </div>
-          {/* <Image src="/image/how-it-works.png" width={700} height={607} alt="how-it-works" quality={100} /> */}
         </div>
       </div>
     </section>
