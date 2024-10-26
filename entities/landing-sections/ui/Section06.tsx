@@ -1,28 +1,104 @@
+'use client';
+
 import {Heading} from '@/components/ui/Heading';
+import {motion} from 'framer-motion';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import Image from 'next/image';
-import React from 'react';
+import React, {useState} from 'react';
+import {ModelSection06} from '../model';
+import Chip from '@/features/Calculator/_ui/Chip';
+import {cn} from '@/lib/utils';
 
 export const Section06 = () => {
+  const [activeTab, setActiveTab] = useState<string>('construction');
   return (
     <div className="bg-black mt-[65px] py-[65px]">
       <section className="container mx-auto flex gap-[50px]">
         <Image src="/image/sec6.webp" width={500} height={489} alt="cases" quality={100} className="shrink-0" />
-        <div className='grow'>
+        <div className="grow">
           <Heading className="text-white max-w-[464px]">Какие результаты вы можете получить</Heading>
-          <div className='mt-[15px]'>
-            <Tabs defaultValue="account" className="w-full">
-              <TabsList className='bg-white/10 p-[5px] mb-[30px]'>
-                <TabsTrigger className='py-2.5 px-5 text-sm font-medium' value="construction">Строительство</TabsTrigger>
-                <TabsTrigger className='py-2.5 px-5 text-sm font-medium' value="realty">Недвижимость</TabsTrigger>
-                <TabsTrigger className='py-2.5 px-5 text-sm font-medium' value="glazing">Остекление</TabsTrigger>
-                <TabsTrigger className='py-2.5 px-5 text-sm font-medium' value="finance">Финансы</TabsTrigger>
+          <div className="mt-[15px]">
+            <Tabs defaultValue="construction" className="w-full">
+              <TabsList className="bg-white/10 p-[5px] mb-[10px]">
+                <TabsTrigger
+                  className="py-2.5 px-5 text-sm font-medium"
+                  onClick={() => setActiveTab('construction')}
+                  value="construction">
+                  Строительство
+                </TabsTrigger>
+                <TabsTrigger
+                  className="py-2.5 px-5 text-sm font-medium"
+                  onClick={() => setActiveTab('realty')}
+                  value="realty">
+                  Недвижимость
+                </TabsTrigger>
+                <TabsTrigger
+                  className="py-2.5 px-5 text-sm font-medium"
+                  onClick={() => setActiveTab('glazing')}
+                  value="glazing">
+                  Остекление
+                </TabsTrigger>
+                <TabsTrigger
+                  className="py-2.5 px-5 text-sm font-medium"
+                  onClick={() => setActiveTab('finance')}
+                  value="finance">
+                  Финансы
+                </TabsTrigger>
               </TabsList>
-              <TabsContent className='bg-[#252525] p-[25px] rounded-[20px] text-white w-full' value="construction">Make changes to your account here.</TabsContent>
-              <TabsContent className='bg-[#252525] p-[25px] rounded-[20px] text-white w-full' value="realty">Change your password here.</TabsContent>
-              <TabsContent className='bg-[#252525] p-[25px] rounded-[20px] text-white w-full' value="glazing">Change your password here.</TabsContent>
-              <TabsContent className='bg-[#252525] p-[25px] rounded-[20px] text-white w-full' value="finance">Change your password here.</TabsContent>
+              {ModelSection06.map((item) => (
+                <TabsContent key={item.value} className=" w-full" value={item.value}>
+                  <motion.div
+                    key={item.value}
+                    animate={activeTab === item.value ? 'active' : 'inactive'}
+                    variants={{
+                      active: {opacity: 1, y: '0'},
+                      inactive: {opacity: 0, y: '50%'},
+                    }}
+                    exit={{ opacity: 0, y: '-50%' }}
+                    transition={{duration: 1, ease: [0.04, 0.62, 0.23, 0.98]}}
+                    className="bg-[#252525] p-[25px] rounded-[20px] text-white">
+                    <div className="flex items-center justify-center size-[45px] rounded-[10px] border-2 border-primary text-primary">
+                      {item.icon}
+                    </div>
+                    <div className="flex mt-5 gap-5 [&>*]:grow [&_ul]:flex [&_ul]:justify-between [&_ul]:mt-[15px]">
+                      <div>
+                        <p className="text-[#F25959] bg-[#F25959]/10 rounded-[10px] px-[15px] text-sm leading-[32px]">
+                          Было
+                        </p>
+                        <ul>
+                          {item.before.map((b) => (
+                            <li>
+                              <p className="text-white/50 text-sm">{b.label}</p>
+                              <p className="text-white text-[22px] leading-tight font-medium mt-[5px]">{b.value}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-primary bg-primary/10 rounded-[10px] px-[15px] text-sm leading-[32px]">
+                          Стало
+                        </p>
+                        <ul>
+                          {item.after.map((a) => (
+                            <li>
+                              <p className="text-primary text-sm">{a.label}</p>
+                              <p
+                                className={cn(
+                                  'text-primary text-[22px] leading-tight font-medium mt-[5px]',
+                                  a.discount && 'flex items-start gap-[5px]'
+                                )}>
+                                {a.value} {a.discount && <Chip className="max-h-[25px]">{a.discount}</Chip>}
+                              </p>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+                </TabsContent>
+              ))}
             </Tabs>
+            <p className='text-sm text-white/60 mt-5'>Результаты говорят сами за себя — с использованием нашего сервиса стоимость лидов в строительстве снизилась с 3 500 до 700 рублей, что означает 80% экономии. Мы привлекли больше лидов, сохранив тот же объем бюджета. Это не просто экономия, это революция в подходе к лидогенерации для строительных компаний.</p>
           </div>
         </div>
       </section>

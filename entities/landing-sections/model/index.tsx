@@ -14,6 +14,10 @@ import IconPriorityArrow from '@/shared/icons/priority-arrow.svg';
 import IconGift from '@/shared/icons/gift.svg';
 import IconCalendar from '@/shared/icons/calendar.svg';
 import IconCrm from '@/shared/icons/crm.svg';
+import IconConstruction from  '@/shared/icons/construction.svg'
+import IconRealty from '@/shared/icons/realty.svg'
+import IconGlazing from '@/shared/icons/glazing.svg'
+import IconFinance from '@/shared/icons/finance.svg'
 import {ReactNode} from 'react';
 
 export const ModelSection05 = [
@@ -33,6 +37,142 @@ export const ModelSection05 = [
     note: 'Вы взаимодействуете с клиентами напрямую, минуя этап дорогой и конкурентной рекламы.',
   },
 ];
+
+export const ModelSection06 = [
+  {
+    value: 'construction',
+    icon: <IconConstruction />,
+    before: [
+      {
+        label: "Потраченный бюджет",
+        value: "55 000 ₽"
+      },
+      {
+        label: "Лиды",
+        value: "2 660"
+      },
+      {
+        label: "Стоимость лида",
+        value: "3 500 ₽"
+      },
+    ],
+    after: [
+      {
+        label: "Потраченный бюджет",
+        value: "55 000 ₽"
+      },
+      {
+        label: "Лиды",
+        value: "3 010"
+      },
+      {
+        label: "Стоимость лида",
+        value: "700 ₽",
+        discount: "-80%"
+      },
+    ]
+  },
+  {
+    value: 'realty',
+    icon: <IconRealty />,
+    before: [
+      {
+        label: "Потраченный бюджет",
+        value: "70 000 ₽"
+      },
+      {
+        label: "Лиды",
+        value: "3 000"
+      },
+      {
+        label: "Стоимость лида",
+        value: "4 500 ₽"
+      },
+    ],
+    after: [
+      {
+        label: "Потраченный бюджет",
+        value: "70 000 ₽"
+      },
+      {
+        label: "Лиды",
+        value: "3 500"
+      },
+      {
+        label: "Стоимость лида",
+        value: "900 ₽",
+        discount: "-80%"
+      },
+    ]
+  },
+  {
+    value: 'glazing',
+    icon: <IconGlazing />,
+    before: [
+      {
+        label: "Потраченный бюджет",
+        value: "30 000 ₽"
+      },
+      {
+        label: "Лиды",
+        value: "1 200"
+      },
+      {
+        label: "Стоимость лида",
+        value: "2 000 ₽"
+      },
+    ],
+    after: [
+      {
+        label: "Потраченный бюджет",
+        value: "30 000 ₽"
+      },
+      {
+        label: "Лиды",
+        value: "1 380"
+      },
+      {
+        label: "Стоимость лида",
+        value: "500 ₽",
+        discount: "-75%"
+      },
+    ]
+  },
+  {
+    value: 'finance',
+    icon: <IconFinance />,
+    before: [
+      {
+        label: "Потраченный бюджет",
+        value: "100 000 ₽"
+      },
+      {
+        label: "Лиды",
+        value: "4 500"
+      },
+      {
+        label: "Стоимость лида",
+        value: "2 500 ₽"
+      },
+    ],
+    after: [
+      {
+        label: "Потраченный бюджет",
+        value: "100 000 ₽"
+      },
+      {
+        label: "Лиды",
+        value: "5 150"
+      },
+      {
+        label: "Стоимость лида",
+        value: "700 ₽",
+        discount: "-72%"
+      },
+    ]
+  },
+];
+
 
 export const ModelSection07 = [
   {

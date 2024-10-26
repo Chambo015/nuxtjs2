@@ -14,7 +14,7 @@ export const Section02 = () => {
     <section className="container mx-auto mt-[75px] ">
       <Heading>Как это работает</Heading>
       <div className="flex gap-[50px] items-center mt-[25px]">
-  
+
         <div className="grid grid-cols-2 shrink-0 grow gap-5 min-w-[50%]">
           <div
             className={cn(
@@ -22,6 +22,7 @@ export const Section02 = () => {
               activeTab === 0 ? 'bg-primary' : 'bg-[#F5F7F9]'
             )}>
             <Image
+            onMouseEnter={() => setActiveTab(0)}
               src="/image/sec2_1.webp"
               fill
               alt="how-it-works"
@@ -35,6 +36,7 @@ export const Section02 = () => {
               activeTab === 1 ? 'bg-primary' : 'bg-[#F5F7F9]'
             )}>
             <Image
+            onMouseEnter={() => setActiveTab(1)}
               src="/image/sec2_2.webp"
               fill
               alt="how-it-works"
@@ -48,6 +50,7 @@ export const Section02 = () => {
               activeTab === 2 ? 'bg-primary' : 'bg-[#F5F7F9]'
             )}>
             <Image
+            onMouseEnter={() => setActiveTab(2)}
               src="/image/sec2_3.webp"
               fill
               alt="how-it-works"
