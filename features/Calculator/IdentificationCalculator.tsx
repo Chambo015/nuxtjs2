@@ -6,31 +6,58 @@ import Chip from './_ui/Chip';
 import {useMemo, useState} from 'react';
 import {Heading} from '@/components/ui/Heading';
 
+const interpolate = (
+	number: number,
+	currentScaleMin: number,
+	currentScaleMax: number,
+	newScaleMin = 0,
+	newScaleMax = 1
+) => {
+	// First, normalize the value between 0 and 1
+	const standardNormalization = 
+		(number - currentScaleMin) / (currentScaleMax - currentScaleMin);
+	
+	// Next, transpose that value to our desired scale	
+	return (
+		(newScaleMax - newScaleMin) * standardNormalization + newScaleMin
+	);
+};
+
 export const IdentificationCalculator = () => {
   const [slider, setSlider] = useState(50);
   const identificationCount = useMemo(() => {
     const minCount = 200;
-    const maxCount = 100000;
+    const maxCount = 30000;
+
+    if (slider <= 20) {
+      return Math.round(interpolate(slider, 0, 20, 200, 500));
+    } else if (slider >= 20 && slider <= 40) {
+      return Math.round(interpolate(slider, 20, 40, 500, 2000));
+    } else if (slider >= 40 && slider <= 60) {
+      return Math.round(interpolate(slider, 40, 60, 2000, 5000));
+    } else if (slider >= 60 && slider <= 80) {
+      return Math.round(interpolate(slider, 60, 80, 5000, 10000));
+    } else if (slider >= 80) {
+      return Math.round(interpolate(slider, 80, 100, 10000, 30000));;
+    } else {
+      return 1;
+    }
 
     return Math.round(minCount + (slider / 100) * (maxCount - minCount));
   }, [slider]);
 
   const pricePerIdentification = useMemo(() => {
     // Определяем цену на основе значения slider
-    if (slider <= 14) {
+    if (slider <= 20) {
       return 45;
-    } else if (slider >= 14 && slider <= 28) {
+    } else if (slider >= 20 && slider <= 40) {
       return 40;
-    } else if (slider >= 28 && slider <= 42) {
+    } else if (slider >= 40 && slider <= 60) {
       return 35;
-    } else if (slider >= 42 && slider <= 57) {
+    } else if (slider >= 60 && slider <= 80) {
       return 30;
-    } else if (slider >= 57 && slider <= 71) {
+    } else if (slider >= 80) {
       return 25;
-    } else if (slider >= 71 && slider <= 85) {
-      return 20;
-    } else if (slider >= 85) {
-      return 15;
     } else {
       return 1;
     }
@@ -75,16 +102,6 @@ export const IdentificationCalculator = () => {
       discount: '-44%',
       identifications: '5000 идент.'
     },
-    {
-      value: '20 ₽',
-      discount: '-56%',
-      identifications: '5000 идент.'
-    },
-    {
-      value: '15 ₽',
-      discount: '-67%',
-      identifications: '5000 идент.'
-    },
   ];
 
   return (
@@ -123,7 +140,7 @@ export const IdentificationCalculator = () => {
               className="w-full"
               onValueChange={(v) => setSlider(v[0])}
             />
-            <ul className="grid grid-cols-7 mt-[calc(-25px/2)]">
+            <ul className="grid grid-cols-5 mt-[calc(-25px/2)]">
               {points.map((p) => (
                 <li key={p.value}>
                   <div className="h-[25px] w-0.5 rounded-2xl bg-[#E6E6E6] mb-6 max-lg:mb-3"></div>
