@@ -15,10 +15,10 @@ export const Section02 = () => {
       <Heading data-aos="fade-up-right">Как это работает</Heading>
       <div className="flex gap-[50px] items-center mt-[25px] max-md:flex-col">
 
-        <div  data-aos="flip-left" className="grid grid-cols-2 max-lg:grid-cols-1 shrink-0 grow gap-5 min-w-[50%] max-lg:min-w-[35%]">
+        <div  data-aos="flip-left" className="grid grid-cols-2 max-lg:grid-cols-1 shrink-0 grow gap-5 min-w-[50%] max-lg:min-w-[35%] max-md:w-full max-md:h-[250px]">
           <div
             className={cn(
-              'rounded-[20px]  flex items-center justify-center py-8 px-9 transition-all duration-500 relative overflow-hidden h-[300px] max-lg:h-auto max-lg:aspect-square',
+              'rounded-[20px]  flex items-center justify-center py-8 px-9 transition-all duration-500 relative overflow-hidden h-[300px] max-lg:h-auto max-lg:aspect-square max-md:aspect-auto',
               activeTab === 0 ? 'bg-primary' : 'bg-[#F5F7F9] max-lg:hidden'
             )}>
             <Image
@@ -32,7 +32,7 @@ export const Section02 = () => {
           </div>
           <div
             className={cn(
-              'rounded-[20px] bg-[#F5F7F9] flex items-center justify-center py-8 transition-all duration-500 px-9 relative overflow-hidden h-[300px] max-lg:h-auto max-lg:aspect-square',
+              'rounded-[20px] bg-[#F5F7F9] flex items-center justify-center py-8 transition-all duration-500 px-9 relative overflow-hidden h-[300px] max-lg:h-auto max-lg:aspect-square max-md:aspect-auto',
               activeTab === 1 ? 'bg-primary' : 'bg-[#F5F7F9] max-lg:hidden'
             )}>
             <Image
@@ -46,7 +46,7 @@ export const Section02 = () => {
           </div>
           <div
             className={cn(
-              'col-span-2 rounded-[20px] bg-[#F5F7F9] flex items-center justify-center py-8 transition-all duration-500 px-9 relative overflow-hidden h-[283px] max-lg:h-auto max-lg:aspect-square',
+              'col-span-2 rounded-[20px] bg-[#F5F7F9] flex items-center justify-center py-8 transition-all duration-500 px-9 relative overflow-hidden h-[283px] max-lg:h-auto max-lg:aspect-square max-md:aspect-auto',
               activeTab === 2 ? 'bg-primary' : 'bg-[#F5F7F9] max-lg:hidden'
             )}>
             <Image
