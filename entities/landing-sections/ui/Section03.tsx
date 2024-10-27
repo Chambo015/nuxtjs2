@@ -5,11 +5,49 @@ import SiteSvg from "@/shared/icons/site.svg";
 import PhoneSvg from "@/shared/icons/phone.svg";
 import AppsSvg from "@/shared/icons/apps.svg";
 
+import graphicAnimation from '../../../public/rotation-reverse.json';
+import { useEffect, useRef } from "react";
+import Lottie from "react-lottie";
+
 export const Section03 = () => {
+  const parrent = useRef(null);
+  const lottieRef = useRef<Lottie>();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            lottieRef.current?.play(); // Start playing when visible
+          } else {
+            lottieRef.current?.stop(); // Stop playing when out of view
+          }
+        });
+      },
+      {threshold: 0.5} // 10% видимости
+    );
+
+    if (parrent.current) {
+      observer.observe(parrent.current);
+    }
+
+    return () => {
+      if (parrent.current) {
+        observer.unobserve(parrent.current);
+      }
+    };
+  }, []);
+
+  const defaultOptions = {
+    loop: true, // Устанавливает, зациклена ли анимация
+    autoplay: true, // Автозапуск отключен, чтобы анимация начиналась только при видимости
+    animationData: graphicAnimation,
+  };
+
   return (
     <section className="container mx-auto mt-[75px]">
-      <Heading>Способы сбора контактов</Heading>
-      <p className="max-w-[550px] text-sm text-black mt-[15px]">
+      <Heading data-aos="fade-up-right">Способы сбора контактов</Heading>
+      <p data-aos="fade-up-right" className="max-w-[550px] text-sm text-black mt-[15px]">
         Ai-UP предлагает четыре способа получения горячих лидов для увеличения
         продаж и привлечения целевой аудитории
       </p>
@@ -69,7 +107,7 @@ export const Section03 = () => {
           </li>
         </ul>
         <div data-aos="fade-left" className="min-w-[40%] max-lg:hidden bg-[#F5F7F9] rounded-[20px] overflow-hidden">
-          <div className="relative size-full">
+          <div ref={parrent} className="relative size-full">
             <svg
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
               xmlns="http://www.w3.org/2000/svg"
@@ -146,6 +184,7 @@ export const Section03 = () => {
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 py-[60px] px-[25px] bg-primary rounded-[25px] text-white font-medium">
               Сбор контактов
             </div>
+             {/* <Lottie options={defaultOptions} height={400} width={400} ref={lottieRef} /> */}
           </div>
         </div>
       </div>

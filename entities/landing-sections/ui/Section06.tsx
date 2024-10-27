@@ -14,8 +14,8 @@ export const Section06 = () => {
   return (
     <div className="bg-black mt-[65px] py-[65px]">
       <section className="container mx-auto flex gap-[50px] max-md:overflow-hidden">
-        <Image src="/image/sec6.webp" width={500} height={489} alt="cases" quality={100} className="shrink-0 max-xl:hidden self-start" />
-        <div className="grow max-md:overflow-hidden">
+        <Image data-aos="fade-up-right" src="/image/sec6.webp" width={500} height={489} alt="cases" quality={100} className="shrink-0 max-xl:hidden self-start" />
+        <div data-aos="fade-up-left" className="grow max-md:overflow-hidden">
           <Heading className="text-white max-w-[464px]">Какие результаты вы можете получить</Heading>
           <div className="mt-[15px]">
             <Tabs defaultValue="construction" className="w-full">

@@ -12,10 +12,10 @@ export const Section02 = () => {
   const [activeTab, setActiveTab] = useState(1);
   return (
     <section id="how" className="container mx-auto mt-[75px] ">
-      <Heading>Как это работает</Heading>
+      <Heading data-aos="fade-up-right">Как это работает</Heading>
       <div className="flex gap-[50px] items-center mt-[25px] max-md:flex-col">
 
-        <div className="grid grid-cols-2 max-lg:grid-cols-1 shrink-0 grow gap-5 min-w-[50%] max-lg:min-w-[35%]">
+        <div  data-aos="flip-left" className="grid grid-cols-2 max-lg:grid-cols-1 shrink-0 grow gap-5 min-w-[50%] max-lg:min-w-[35%]">
           <div
             className={cn(
               'rounded-[20px]  flex items-center justify-center py-8 px-9 transition-all duration-500 relative overflow-hidden h-[300px] max-lg:h-auto max-lg:aspect-square',
@@ -60,7 +60,7 @@ export const Section02 = () => {
           </div>
         </div>
 
-        <ul className="space-y-4">
+        <ul data-aos="fade-up-left" className="space-y-4">
           <li className={cn("group flex gap-5 py-[15px] pl-[23px] relative before:absolute before:inset-y-0 before:left-0 before:w-[3px] before:h-full before:bg-primary/10 before:rounded-2xl [&.active-tab]:before:bg-primary ", activeTab === 0 && 'active-tab')} onMouseEnter={() => setActiveTab(0)} onTouchStart={() => setActiveTab(0)}>
             <div className="shrink-0 group-[.active-tab]:text-primary">
               <SiteIcon width="25" height="25" />

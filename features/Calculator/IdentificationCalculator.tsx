@@ -9,24 +9,28 @@ import {Heading} from '@/components/ui/Heading';
 export const IdentificationCalculator = () => {
   const [slider, setSlider] = useState(50);
   const identificationCount = useMemo(() => {
-    const minCount = 1000;
-    const maxCount = 5000;
+    const minCount = 200;
+    const maxCount = 100000;
 
-    return minCount + (slider / 100) * (maxCount - minCount);
+    return Math.round(minCount + (slider / 100) * (maxCount - minCount));
   }, [slider]);
 
   const pricePerIdentification = useMemo(() => {
     // Определяем цену на основе значения slider
-    if (slider <= 20) {
-      return 50;
-    } else if (slider >= 21 && slider <= 40) {
+    if (slider <= 14) {
       return 45;
-    } else if (slider >= 41 && slider <= 60) {
+    } else if (slider >= 14 && slider <= 28) {
       return 40;
-    } else if (slider >= 61 && slider <= 80) {
+    } else if (slider >= 28 && slider <= 42) {
       return 35;
-    } else if (slider >= 81) {
+    } else if (slider >= 42 && slider <= 57) {
       return 30;
+    } else if (slider >= 57 && slider <= 71) {
+      return 25;
+    } else if (slider >= 71 && slider <= 85) {
+      return 20;
+    } else if (slider >= 85) {
+      return 15;
     } else {
       return 1;
     }
@@ -34,41 +38,51 @@ export const IdentificationCalculator = () => {
 
   const totalCost = useMemo(() => {
     // Общая сумма
-    return identificationCount * pricePerIdentification;
+    return Math.round(identificationCount * pricePerIdentification);
   }, [identificationCount, pricePerIdentification]);
 
   const discount = useMemo(() => {
-    const basePrice = 50;
+    const basePrice = 45;
     // Вычисляем размер скидки относительно базовой цены
     const discountAmount = basePrice - pricePerIdentification;
     const discountPercentage = (discountAmount / basePrice) * 100;
 
-    return discountPercentage;
+    return Math.round(discountPercentage);
   }, [pricePerIdentification]);
 
   const points = [
     {
-      value: '50 ₽',
+      value: '45 ₽',
       identifications: '100 идент.'
     },
     {
-      value: '45 ₽',
+      value: '40 ₽',
       discount: '-11%',
       identifications: '500 идент.'
     },
     {
-      value: '40 ₽',
-      discount: '-25%',
+      value: '35 ₽',
+      discount: '-22%',
       identifications: '2500 идент.'
     },
     {
-      value: '35 ₽',
-      discount: '-42%',
+      value: '30 ₽',
+      discount: '-33%',
       identifications: '3500 идент.'
     },
     {
-      value: '30 ₽',
-      discount: '-66%',
+      value: '25 ₽',
+      discount: '-44%',
+      identifications: '5000 идент.'
+    },
+    {
+      value: '20 ₽',
+      discount: '-56%',
+      identifications: '5000 идент.'
+    },
+    {
+      value: '15 ₽',
+      discount: '-67%',
       identifications: '5000 идент.'
     },
   ];
@@ -77,7 +91,7 @@ export const IdentificationCalculator = () => {
     <section id="cost" className="max-w-screen-xl mx-auto bg-black rounded-[20px] overflow-hidden px-9 relative font-euclid-circular max-lg:px-4">
       <div className="py-[65px] flex items-center gap-[46px] relative z-10 max-lg:py-6 max-lg:gap-5 max-md:flex-col max-lg:items-stretch">
         {/* Left */}
-        <div className="flex grow items-center justify-center border border-white/20 rounded-[30px] py-[85px] max-lg:py-8 max-lg:px-3 max-lg:grow-0">
+        <div data-aos="fade-up-right" className="flex grow items-center justify-center border border-white/20 rounded-[30px] py-[85px] max-lg:py-8 max-lg:px-3 max-lg:grow-0">
           <div className="bg-[#F5F7F9] p-[10px] rounded-[20px]">
             <div className="p-[10px]">
               <p className="text-[#161616] font-medium text-lg">{identificationCount} идентификации</p>
@@ -95,7 +109,7 @@ export const IdentificationCalculator = () => {
           </div>
         </div>
         {/* Right */}
-        <div className="grow">
+        <div data-aos="fade-up-left" className="grow">
           <Heading className="w-min text-white font-medium">Калькулятор идентификации</Heading>
           <div className="flex gap-2.5 items-center mt-2.5">
             <span className="text-white/80 text-sm">Цена за 1 идентификацию</span>
@@ -109,12 +123,9 @@ export const IdentificationCalculator = () => {
               className="w-full"
               onValueChange={(v) => setSlider(v[0])}
             />
-            <ul className="grid grid-cols-5 mt-[calc(-25px/2-24px)]">
+            <ul className="grid grid-cols-7 mt-[calc(-25px/2)]">
               {points.map((p) => (
                 <li key={p.value}>
-                  <div>
-                    <span className='text-white text-sm max-lg:text-xs max-lg:truncate max-lg:mr-1'>{p.identifications}</span>
-                  </div>
                   <div className="h-[25px] w-0.5 rounded-2xl bg-[#E6E6E6] mb-6 max-lg:mb-3"></div>
                   <div className="h-[27px] text-sm flex gap-2.5 items-center max-lg:flex-col max-lg:items-start max-lg:gap-1">
                     <span className="text-white/50">{p.value}</span>
