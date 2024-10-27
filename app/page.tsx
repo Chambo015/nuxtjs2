@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className="font-euclid-circular w-full">
       <AnimationBackground>
-        <div className="min-h-[785px] max-xl:min-h-[700px] max-lg:min-h-[700px] hero-section pt-7 flex flex-col z-10 relative w-full max-md:pt-4 overflow-hidden">
+        <div className="min-h-[785px] max-xl:min-h-[700px] max-md:min-h-[700px] hero-section pt-7 flex flex-col z-10 relative w-full max-md:pt-4 overflow-hidden max-[480px]:min-h-[750px]">
           <div className="shrink-0">
             <AppHeader />
           </div>
@@ -71,7 +71,7 @@ export default function Home() {
               quality={100}
               className="absolute right-0 bottom-0 pointer-events-none "
             /> */}
-            <div className="absolute right-0 bottom-0 size-[900px] translate-x-[20%] max-xl:translate-y-[20%] max-xl:translate-x-[45%] max-lg:translate-x-0 max-lg:h-[700px]  max-lg:w-full max-sm:translate-y-[30%] pointer-events-none max-[480px]:translate-x-[27%]">
+            <div className="absolute right-0 bottom-0 size-[900px] translate-x-[20%] max-xl:translate-y-[20%] max-xl:translate-x-[45%] max-lg:translate-x-0 max-lg:h-[700px]  max-lg:w-full max-sm:translate-y-[30%] pointer-events-none ">
               <Spline
                 style={{background: 'none'}}
                 scene="https://prod.spline.design/UKqVR2cGwPCOgft2/scene.splinecode"
