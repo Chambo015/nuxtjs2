@@ -3,7 +3,7 @@ import { Heading } from '@/components/ui/Heading';
 
 export const Section01 = () => {
   return (
-    <section className="container mx-auto mt-[75px] flex gap-[50px] items-center">
+    <section className="container mx-auto mt-[75px] flex gap-[50px] items-center max-md:flex-col">
         <div className="shrink-0 max-lg:bg-[#F5F7F9] max-lg:p-4 rounded-[20px]">
           <Image
             src="/image/lead-generation.png"

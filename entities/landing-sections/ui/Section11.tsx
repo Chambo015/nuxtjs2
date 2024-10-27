@@ -8,7 +8,7 @@ import {ModelSection11} from '../model';
 export const Section11 = () => {
   return (
     <section className="container mx-auto mt-[75px]">
-      <div className="flex gap-[100px] items-center container overflow-hidden">
+      <div className="flex gap-[100px] items-center container overflow-hidden max-md:flex-col-reverse max-lg:gap-8">
         <div>
           <Heading>Встроенная удобная CRM система</Heading>
           <p className="text-black/80 mt-[15px]">
@@ -20,14 +20,14 @@ export const Section11 = () => {
             <li>Настройка стадий сделок под ваши процессы</li>
           </ul>
         </div>
-        <div className="grow px-[37px] pt-[30px] bg-[#F5F7F9] max-xl:pr-0 rounded-[20px] w-[644px] max-xl:w-[40%] shrink-0 max-xl:overflow-hidden">
+        <div className="grow px-[37px] pt-[30px] bg-[#F5F7F9] max-xl:pr-0 rounded-[20px] w-[644px] max-xl:w-[40%] shrink-0 max-xl:overflow-hidden max-md:w-full">
           <Image
             src="/image/sec11.png"
             width={570}
             height={227}
             alt="crm"
             quality={100}
-            className="object-contain rounded-[10px] max-xl:size-full max-xl:aspect-square max-xl:object-left-top max-xl:object-cover"
+            className="object-contain rounded-[10px] max-xl:size-full max-xl:aspect-square max-xl:object-left-top max-xl:object-cover max-md:aspect-auto"
           />
         </div>
       </div>

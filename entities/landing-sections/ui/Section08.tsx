@@ -9,7 +9,7 @@ import {ModelSection08} from '../model';
 
 export const Section08 = () => {
   return (
-    <section className="container mx-auto mt-[85px]">
+    <section id="advantages" className="container mx-auto mt-[85px]">
       <Heading className="max-w-[370px]">Преимущества нашего сервиса</Heading>
 
       <div className="mt-[25px]">
@@ -22,7 +22,7 @@ export const Section08 = () => {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 2.2,
+              slidesPerView: 1.8,
               spaceBetween: 40,
             },
             1024: {

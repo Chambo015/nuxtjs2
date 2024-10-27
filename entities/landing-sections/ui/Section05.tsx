@@ -12,7 +12,7 @@ export const Section05 = () => {
       </p>
       <ul className="grid grid-cols-3 gap-[15px] max-md:grid-cols-1 mt-[25px] max-lg:grid-cols-1">
         {ModelSection05.map((item) => (
-          <li key={item.title} className="rounded-[15px] bg-[#F5F7F9] px-[35px] py-[30px] gap-[25px] max-md:p-[25px] flex flex-col items-center max-lg:flex-row">
+          <li key={item.title} className="rounded-[15px] bg-[#F5F7F9] px-[35px] py-[30px] gap-[25px] max-md:p-[25px] flex flex-col items-center max-lg:flex-row max-md:flex-col">
             <Image
               src={item.img}
               width={345}

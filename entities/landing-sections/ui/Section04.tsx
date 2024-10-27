@@ -88,7 +88,7 @@ export const Section04 = () => {
 
   return (
     <article className="container mx-auto mt-[65px]">
-      <div className="bg-primary py-[65px] px-[35px] max-lg:p-5 rounded-[20px] flex size-full relative">
+      <div className="bg-primary py-[65px] px-[35px] max-lg:p-5 rounded-[20px] flex size-full relative max-md:flex-col-reverse">
         <div>
           <Heading className="text-white  font-medium max-w-[630px] max-lg:max-w-[382px] max-lg:text-[22px]">
             Начните получать в 2-3 раза больше горячих лидов уже сегодня
@@ -107,9 +107,9 @@ export const Section04 = () => {
             Попробовать бесплатно
           </Button>
         </div>
-        <div className="flex items-center justify-center grow">
+        <div className="flex items-center justify-center grow max-md:h-[120px]">
           <div
-            className="flex bg-white py-5 px-[34px] max-lg:px-4 max-lg:py-2 gap-5 max-lg:rounded-xl rounded-[27px] relative bottom-[50px] -rotate-12"
+            className="flex bg-white py-5 px-[34px] max-lg:px-4 max-lg:py-2 gap-5 max-lg:rounded-xl rounded-[27px] relative bottom-[50px] max-md:bottom-0 -rotate-12"
             id="end1"
           >
             <svg
@@ -142,7 +142,7 @@ export const Section04 = () => {
             </div>
           </div>
         </div>
-        <canvas id="myCanvas" className="absolute inset-0 size-full"></canvas>
+        <canvas id="myCanvas" className="absolute inset-0 size-full max-md:hidden"></canvas>
       </div>
     </article>
   );

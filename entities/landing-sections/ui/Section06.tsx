@@ -13,40 +13,42 @@ export const Section06 = () => {
   const [activeTab, setActiveTab] = useState<string>('construction');
   return (
     <div className="bg-black mt-[65px] py-[65px]">
-      <section className="container mx-auto flex gap-[50px]">
-        <Image src="/image/sec6.webp" width={500} height={489} alt="cases" quality={100} className="shrink-0 max-lg:hidden" />
-        <div className="grow">
+      <section className="container mx-auto flex gap-[50px] max-md:overflow-hidden">
+        <Image src="/image/sec6.webp" width={500} height={489} alt="cases" quality={100} className="shrink-0 max-xl:hidden" />
+        <div className="grow max-md:overflow-hidden">
           <Heading className="text-white max-w-[464px]">Какие результаты вы можете получить</Heading>
           <div className="mt-[15px]">
             <Tabs defaultValue="construction" className="w-full">
-              <TabsList className="bg-white/10 p-[5px] mb-[10px]">
-                <TabsTrigger
-                  className="py-2.5 px-5 text-sm font-medium"
-                  onClick={() => setActiveTab('construction')}
-                  value="construction">
-                  Строительство
-                </TabsTrigger>
-                <TabsTrigger
-                  className="py-2.5 px-5 text-sm font-medium"
-                  onClick={() => setActiveTab('realty')}
-                  value="realty">
-                  Недвижимость
-                </TabsTrigger>
-                <TabsTrigger
-                  className="py-2.5 px-5 text-sm font-medium"
-                  onClick={() => setActiveTab('glazing')}
-                  value="glazing">
-                  Остекление
-                </TabsTrigger>
-                <TabsTrigger
-                  className="py-2.5 px-5 text-sm font-medium"
-                  onClick={() => setActiveTab('finance')}
-                  value="finance">
-                  Финансы
-                </TabsTrigger>
-              </TabsList>
+              <div className='max-md:overflow-x-auto'>
+                <TabsList className="bg-white/10 p-[5px] mb-[10px]">
+                  <TabsTrigger
+                    className="py-2.5 px-5 text-sm font-medium"
+                    onClick={() => setActiveTab('construction')}
+                    value="construction">
+                    Строительство
+                  </TabsTrigger>
+                  <TabsTrigger
+                    className="py-2.5 px-5 text-sm font-medium"
+                    onClick={() => setActiveTab('realty')}
+                    value="realty">
+                    Недвижимость
+                  </TabsTrigger>
+                  <TabsTrigger
+                    className="py-2.5 px-5 text-sm font-medium"
+                    onClick={() => setActiveTab('glazing')}
+                    value="glazing">
+                    Остекление
+                  </TabsTrigger>
+                  <TabsTrigger
+                    className="py-2.5 px-5 text-sm font-medium"
+                    onClick={() => setActiveTab('finance')}
+                    value="finance">
+                    Финансы
+                  </TabsTrigger>
+                </TabsList>
+              </div>
               {ModelSection06.map((item) => (
-                <TabsContent key={item.value} className=" w-full" value={item.value}>
+                <TabsContent key={item.value} className="w-full max-md:w-auto" value={item.value}>
                   <motion.div
                     key={item.value}
                     animate={activeTab === item.value ? 'active' : 'inactive'}
@@ -60,7 +62,7 @@ export const Section06 = () => {
                     <div className="flex items-center justify-center size-[45px] rounded-[10px] border-2 border-primary text-primary">
                       {item.icon}
                     </div>
-                    <div className="flex mt-5 gap-5 [&>*]:grow [&_ul]:flex [&_ul]:justify-between [&_ul]:mt-[15px]">
+                    <div className="flex mt-5 gap-5 [&>*]:grow [&_ul]:flex [&_ul]:justify-between [&_ul]:mt-[15px] max-md:flex-col [&_ul]:gap-1">
                       <div>
                         <p className="text-[#F25959] bg-[#F25959]/10 rounded-[10px] px-[15px] text-sm leading-[32px]">
                           Было
@@ -69,7 +71,7 @@ export const Section06 = () => {
                           {item.before.map((b) => (
                             <li key={b.label}>
                               <p className="text-white/50 text-sm">{b.label}</p>
-                              <p className="text-white text-[22px] leading-tight font-medium mt-[5px]">{b.value}</p>
+                              <p className="text-white text-[22px] leading-tight font-medium mt-[5px] text-nowrap">{b.value}</p>
                             </li>
                           ))}
                         </ul>
@@ -84,7 +86,7 @@ export const Section06 = () => {
                               <p className="text-primary text-sm">{a.label}</p>
                               <p
                                 className={cn(
-                                  'text-primary text-[22px] leading-tight font-medium mt-[5px]',
+                                  'text-primary text-[22px] leading-tight font-medium mt-[5px] text-nowrap',
                                   a.discount && 'flex items-start gap-[5px]'
                                 )}>
                                 {a.value} {a.discount && <Chip className="max-h-[25px]">{a.discount}</Chip>}

@@ -11,7 +11,7 @@ import {cn} from '@/lib/utils';
 export const Section02 = () => {
   const [activeTab, setActiveTab] = useState(1);
   return (
-    <section className="container mx-auto mt-[75px] ">
+    <section id="how" className="container mx-auto mt-[75px] ">
       <Heading>Как это работает</Heading>
       <div className="flex gap-[50px] items-center mt-[25px] max-md:flex-col">
 

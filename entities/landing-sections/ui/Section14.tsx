@@ -9,16 +9,16 @@ import IconArrowDown from "@/shared/icons/arrow-down.svg"
 export const Section14 = () => {
   const [expanded, setExpanded] = useState<false | number>(0);
   return (
-    <section className="container mx-auto mt-[75px]">
+    <section id="faq" className="container mx-auto mt-[75px]">
       <Heading className="text-center">Часто задаваемые вопросы</Heading>
 
-      <div className='grid grid-cols-2 items-start gap-5 overflow-hidden'>
+      <div className='grid grid-cols-2 items-start gap-5 overflow-hidden max-lg:grid-cols-1'>
         <div className='grid grid-cols-1 items-start gap-5 mt-[25px] shrink-0'>
           {ModelFAQ.slice(0, ModelFAQ.length / 2).map((item) => (
             <Accordion key={item.title} item={item} expanded={expanded} setExpanded={setExpanded} />
           ))}
         </div>
-        <div className='grid grid-cols-1 items-start gap-5 mt-[25px] shrink-0'>
+        <div className='grid grid-cols-1 items-start gap-5 mt-[25px] shrink-0 max-lg:mt-0'>
           {ModelFAQ.slice(ModelFAQ.length / 2).map((item) => (
             <Accordion key={item.title} item={item} expanded={expanded} setExpanded={setExpanded} />
           ))}
