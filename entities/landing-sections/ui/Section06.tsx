@@ -14,7 +14,7 @@ export const Section06 = () => {
   return (
     <div className="bg-black mt-[65px] py-[65px]">
       <section className="container mx-auto flex gap-[50px]">
-        <Image src="/image/sec6.webp" width={500} height={489} alt="cases" quality={100} className="shrink-0" />
+        <Image src="/image/sec6.webp" width={500} height={489} alt="cases" quality={100} className="shrink-0 max-lg:hidden" />
         <div className="grow">
           <Heading className="text-white max-w-[464px]">Какие результаты вы можете получить</Heading>
           <div className="mt-[15px]">
@@ -67,7 +67,7 @@ export const Section06 = () => {
                         </p>
                         <ul>
                           {item.before.map((b) => (
-                            <li>
+                            <li key={b.label}>
                               <p className="text-white/50 text-sm">{b.label}</p>
                               <p className="text-white text-[22px] leading-tight font-medium mt-[5px]">{b.value}</p>
                             </li>
@@ -80,7 +80,7 @@ export const Section06 = () => {
                         </p>
                         <ul>
                           {item.after.map((a) => (
-                            <li>
+                            <li key={a.label}>
                               <p className="text-primary text-sm">{a.label}</p>
                               <p
                                 className={cn(

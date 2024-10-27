@@ -6,7 +6,7 @@ export const Section12 = () => {
   return (
     <section className="container mx-auto mt-[75px]">
       <div className='flex gap-[50px] items-center'>
-        <div className='size-[500px] p-[35px] bg-[#F5F7F9] rounded-[20px] shrink-0'>
+        <div className='size-[500px] p-[35px] bg-[#F5F7F9] rounded-[20px] shrink-0 max-xl:hidden'>
           <Image 
             width={430}
             height={430}

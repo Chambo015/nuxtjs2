@@ -4,14 +4,22 @@ import { Heading } from '@/components/ui/Heading';
 export const Section01 = () => {
   return (
     <section className="container mx-auto mt-[75px] flex gap-[50px] items-center">
-        <div className="shrink-0">
+        <div className="shrink-0 max-lg:bg-[#F5F7F9] max-lg:p-4 rounded-[20px]">
           <Image
             src="/image/lead-generation.png"
             width={500}
             height={293}
             alt="lead-generation"
             quality={100}
-            className=""
+            className="max-lg:hidden"
+          />
+          <Image
+            src="/image/sec1.png"
+            width={261}
+            height={180}
+            alt="lead-generation"
+            quality={100}
+            className="lg:hidden"
           />
         </div>
         <div>

@@ -1,9 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/Heading";
 import React, { useEffect } from "react";
 
-export const BannerGift = () => {
+export const Section04 = () => {
   function findAngle(sx: number, sy: number, toX: number, toY: number) {
     // make sx and sy at the zero point
     return Math.atan((toY - sy) / (toX - sx));
@@ -87,13 +88,13 @@ export const BannerGift = () => {
 
   return (
     <article className="container mx-auto mt-[65px]">
-      <div className="bg-primary py-[65px] px-[35px] rounded-[20px] flex size-full relative">
+      <div className="bg-primary py-[65px] px-[35px] max-lg:p-5 rounded-[20px] flex size-full relative">
         <div>
-          <h3 className="text-white text-[45px] leading-tight font-medium max-w-[630px]">
+          <Heading className="text-white  font-medium max-w-[630px] max-lg:max-w-[382px] max-lg:text-[22px]">
             Начните получать в 2-3 раза больше горячих лидов уже сегодня
-          </h3>
+          </Heading>
           <p
-            className="text-white text-sm leading-[22px] max-w-[530px] mt-[15px]"
+            className="text-white text-sm leading-[22px] max-w-[530px] mt-[15px] max-lg:max-w-[430px]"
             id="start1"
           >
             Зарегистрируйтесь прямо сейчас и получите 40 идентификаций
@@ -108,7 +109,7 @@ export const BannerGift = () => {
         </div>
         <div className="flex items-center justify-center grow">
           <div
-            className="flex bg-white py-5 px-[34px] gap-5 rounded-[27px] relative bottom-[50px] -rotate-12"
+            className="flex bg-white py-5 px-[34px] max-lg:px-4 max-lg:py-2 gap-5 max-lg:rounded-xl rounded-[27px] relative bottom-[50px] -rotate-12"
             id="end1"
           >
             <svg
@@ -117,6 +118,7 @@ export const BannerGift = () => {
               height="49"
               fill="none"
               viewBox="0 0 49 49"
+              className="max-lg:size-[23px]"
             >
               <g clipPath="url(#a)">
                 <path
@@ -130,7 +132,7 @@ export const BannerGift = () => {
                 </clipPath>
               </defs>
             </svg>
-            <div className="text-center text-xl font-medium">
+            <div className="text-center text-xl font-medium max-lg:text-[9px] max-lg:leading-tight">
               <p className="text-primary pb-1 border-b-2 border-primary">
                 Плюс 30 идентификаций в подарок
               </p>

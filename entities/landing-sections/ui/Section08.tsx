@@ -31,8 +31,8 @@ export const Section08 = () => {
             },
           }}>
           {ModelSection08.map((item) => (
-            <SwiperSlide key={item.note}>
-              <div className="border border-black/10 rounded-[20px] p-2.5">
+            <SwiperSlide key={item.note} className='!h-auto !self-stretch'>
+              <div className="border border-black/10 rounded-[20px] p-2.5 h-full">
                 <div className="bg-primary/10 rounded-[20px] h-[130px] flex items-center justify-center text-[45px]">
                   {item.icon}
                 </div>

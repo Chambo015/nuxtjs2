@@ -2,13 +2,14 @@ import { Button } from '@/components/ui/button';
 
 import { AnimationBackground } from '@/features/AnimationBackground/ui/AnimationBackground';
 import { IdentificationCalculator } from '@/features/Calculator/IdentificationCalculator';
-import { СollectingСontacts } from '@/features/СollectingСontacts/СollectingСontacts';
 
 import AppHeader from '@/widgets/AppHeader/AppHeader';
 
 import {
   Section01,
   Section02,
+  Section03,
+  Section04,
   Section05,
   Section06,
   Section07,
@@ -17,9 +18,8 @@ import {
   Section11,
   Section12,
   Section13,
-  Section14,
+  Section14
 } from '@/entities/landing-sections';
-import { BannerGift } from '@/features/BannerGift/BannerGift';
 import { AppFooter } from '@/widgets/AppFooter/AppFooter';
 import Spline from '@splinetool/react-spline/next';
 
@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className="font-euclid-circular w-full">
       <AnimationBackground>
-        <div className="min-h-[785px] hero-section pt-7 flex flex-col z-10 relative w-full">
+        <div className="min-h-[785px] hero-section pt-7 flex flex-col z-10 relative w-full max-md:pt-4">
           <div className="shrink-0">
             <AppHeader />
           </div>
@@ -69,14 +69,15 @@ export default function Home() {
       </AnimationBackground>
       <Section01 />
       <Section02 />
-      <СollectingСontacts />
-      <BannerGift />
+      <Section03 />
+      <Section04 />
       <Section05 />
       <Section06 />
+      <Section07 />
       <div className="container mx-auto mt-[75px]">
         <IdentificationCalculator />
       </div>
-      <Section07 />
+     
       <Section08 />
       <Section10 />
       <Section11 />

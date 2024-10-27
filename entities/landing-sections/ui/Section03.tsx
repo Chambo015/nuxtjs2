@@ -5,7 +5,7 @@ import SiteSvg from "@/shared/icons/site.svg";
 import PhoneSvg from "@/shared/icons/phone.svg";
 import AppsSvg from "@/shared/icons/apps.svg";
 
-export const СollectingСontacts = () => {
+export const Section03 = () => {
   return (
     <section className="container mx-auto mt-[75px]">
       <Heading>Способы сбора контактов</Heading>
@@ -13,7 +13,7 @@ export const СollectingСontacts = () => {
         Ai-UP предлагает четыре способа получения горячих лидов для увеличения
         продаж и привлечения целевой аудитории
       </p>
-      <div className="flex gap-[50px] mt-[25px]">
+      <div className="flex gap-[50px] mt-[25px] max-lg:flex-col">
         <ul className="grid grid-cols-2 gap-[14px]">
           <li className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
             <div className="border-[1.5px] border-primary size-[50px] rounded-full shrink-0 flex items-center justify-center">
@@ -68,7 +68,7 @@ export const СollectingСontacts = () => {
             </p>
           </li>
         </ul>
-        <div className="min-w-[40%] bg-[#F5F7F9] rounded-[20px] overflow-hidden">
+        <div className="min-w-[40%] max-lg:hidden bg-[#F5F7F9] rounded-[20px] overflow-hidden">
           <div className="relative size-full">
             <svg
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
