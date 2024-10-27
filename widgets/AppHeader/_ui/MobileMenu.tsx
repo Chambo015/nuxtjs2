@@ -1,29 +1,24 @@
-"use client"
+'use client';
 
-import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger
-} from '@/components/ui/sheet';
-import { ReactNode, useState } from 'react';
+import {Button} from '@/components/ui/button';
+import {Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger} from '@/components/ui/sheet';
+import {ReactNode, useState} from 'react';
 
 interface MobileMenuProps {
-  nav?: ReactNode
-  contacts?: ReactNode
-  profile?: ReactNode
+  nav?: ReactNode;
+  contacts?: ReactNode;
+  profile?: ReactNode;
 }
 export function MobileMenu({contacts, nav, profile}: MobileMenuProps) {
 
-  const [isTOCOpen, setIsTOCOpen] = useState(false);
   return (
-    <Sheet open={isTOCOpen}>
+    <Sheet >
       <SheetTrigger asChild>
-        <Button onClick={(e) => {
-                  setIsTOCOpen(true);
-                }} variant="ghost" size="icon" className='bg-transparent hover:bg-transparent'>
+        <Button
+ 
+          variant="ghost"
+          size="icon"
+          className="bg-transparent hover:bg-transparent">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
             <path
               fill="#fff"
@@ -37,9 +32,11 @@ export function MobileMenu({contacts, nav, profile}: MobileMenuProps) {
           <SheetTitle>AI-UP</SheetTitle>
         </SheetHeader>
         <div className="grid gap-4 py-4">
-          <div  onClick={(e) => {
-                  setIsTOCOpen(false);
-                }}>{nav}</div>
+          <SheetClose
+          className='text-left'
+            >
+            {nav}
+          </SheetClose>
           {contacts}
           {profile}
         </div>
