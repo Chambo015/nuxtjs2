@@ -16,8 +16,10 @@ export const Section12 = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // @ts-ignore
             lottieRef.current?.play(); // Start playing when visible
           } else {
+            // @ts-ignore
             lottieRef.current?.stop(); // Stop playing when out of view
           }
         });
@@ -48,6 +50,7 @@ export const Section12 = () => {
         <div
           ref={parrent}
           className="size-[500px] p-[35px] bg-[#F5F7F9] rounded-[20px] shrink-0 max-xl:hidden overflow-hidden">
+          {/* @ts-ignore */}
           <Lottie options={defaultOptions} height={400} width={400} ref={lottieRef} />
         </div>
         <div className="max-md:overflow-x-hidden">

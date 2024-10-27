@@ -18,8 +18,10 @@ export const Section03 = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // @ts-ignore
             lottieRef.current?.play(); // Start playing when visible
           } else {
+            // @ts-ignore
             lottieRef.current?.stop(); // Stop playing when out of view
           }
         });

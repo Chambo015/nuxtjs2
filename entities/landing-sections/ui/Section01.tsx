@@ -15,8 +15,10 @@ export const Section01 = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // @ts-ignore
             lottieRef.current?.play(); // Start playing when visible
           } else {
+            // @ts-ignore
             lottieRef.current?.stop(); // Stop playing when out of view
           }
         });
@@ -51,6 +53,7 @@ export const Section01 = () => {
             quality={100}
             className="max-lg:hidden"
           /> */}
+           {/* @ts-ignore */}
            <div  className="max-lg:hidden"><Lottie options={defaultOptions} height={400} width={500} ref={lottieRef} /></div>
           <Image
             src="/image/sec1.png"
