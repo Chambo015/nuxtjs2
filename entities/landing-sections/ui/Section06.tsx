@@ -62,7 +62,7 @@ export const Section06 = () => {
                     <div className="flex items-center justify-center size-[45px] rounded-[10px] border-2 border-primary text-primary">
                       {item.icon}
                     </div>
-                    <div className="flex mt-5 gap-5 [&>*]:grow [&_ul]:flex [&_ul]:justify-between [&_ul]:mt-[15px] max-md:flex-col [&_ul]:gap-1">
+                    <div className="flex mt-5 gap-5 [&>*]:grow [&_ul]:flex [&_ul]:justify-between [&_ul]:mt-[15px] max-md:flex-col [&_ul]:gap-1 max-[420px]:[&_ul]:flex-col">
                       <div>
                         <p className="text-[#F25959] bg-[#F25959]/10 rounded-[10px] px-[15px] text-sm leading-[32px]">
                           Было

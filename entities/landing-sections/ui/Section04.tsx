@@ -102,7 +102,7 @@ export const Section04 = () => {
           </p>
           <Button
             variant={"link"}
-            className="bg-white text-primary max-w-[315px] w-[315px] mt-[15px] underline"
+            className="bg-white text-primary max-w-[315px] w-[315px] mt-[15px] underline max-sm:w-full"
           >
             Попробовать бесплатно
           </Button>
