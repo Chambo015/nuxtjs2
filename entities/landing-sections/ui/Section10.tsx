@@ -26,4 +26,4 @@ export const Section10 = () => {
       </div>
     </section>
   );
-};
+}
