@@ -35,9 +35,9 @@ export const Section11 = () => {
         <p className="text-[22px] font-medium">Интеграция с другими инструментами</p>
         <div className="mt-[25px]">
           <Swiper autoHeight={false} slidesPerView={'auto'} className="!items-stretch">
-            {ModelSection11.map((item) => (
+            {ModelSection11.map((item, idx) => (
               <SwiperSlide key={item.title} className="!self-stretch !w-[calc((100%/6)-16px)] max-xl:!w-[200px] mr-[16px] !h-[135px]">
-                <div className="border border-black/10 rounded-[15px] h-[113px] relative flex items-center justify-center">
+                <div data-aos="fade-up" data-aos-delay={50 * (idx + 1)} className="border border-black/10 rounded-[15px] h-[113px] relative flex items-center justify-center">
                   <img src={item.img} height={25} />
                   <div className="absolute bottom-0 bg-[#F5F7F9] rounded-[10px] shadow translate-y-1/2 left-1/2 
                   -translate-x-1/2 text-sm text-black font-medium py-2.5 px-[15px]">

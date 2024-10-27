@@ -15,7 +15,7 @@ export const Section03 = () => {
       </p>
       <div className="flex gap-[50px] mt-[25px] max-lg:flex-col">
         <ul className="grid grid-cols-2 gap-[14px] max-md:grid-cols-1">
-          <li className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
+          <li data-aos="fade-up" className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
             <div className="border-[1.5px] border-primary size-[50px] rounded-full shrink-0 flex items-center justify-center">
               <BrowserSvg className="text-primary" width="20" height="20" />
             </div>
@@ -27,7 +27,7 @@ export const Section03 = () => {
               посетителей. Превратите текущую аудиторию в клиентов.
             </p>
           </li>
-          <li className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
+          <li data-aos="fade-up" className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
             <div className="border-[1.5px] border-primary size-[50px] rounded-full shrink-0 flex items-center justify-center">
               <SiteSvg className="text-primary" width="20" height="20" />
             </div>
@@ -40,7 +40,7 @@ export const Section03 = () => {
               услугами.
             </p>
           </li>
-          <li className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
+          <li data-aos="fade-up" className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
             <div className="border-[1.5px] border-primary size-[50px] rounded-full shrink-0 flex items-center justify-center">
               <PhoneSvg className="text-primary" width="20" height="20" />
             </div>
@@ -54,7 +54,7 @@ export const Section03 = () => {
               услугами в вашей нише.
             </p>
           </li>
-          <li className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
+          <li data-aos="fade-up" className="p-[25px] pt-5 border border-black/10 rounded-[20px] space-y-3">
             <div className="border-[1.5px] border-primary size-[50px] rounded-full shrink-0 flex items-center justify-center">
               <AppsSvg className="text-primary" width="20" height="20" />
             </div>
@@ -68,7 +68,7 @@ export const Section03 = () => {
             </p>
           </li>
         </ul>
-        <div className="min-w-[40%] max-lg:hidden bg-[#F5F7F9] rounded-[20px] overflow-hidden">
+        <div data-aos="fade-left" className="min-w-[40%] max-lg:hidden bg-[#F5F7F9] rounded-[20px] overflow-hidden">
           <div className="relative size-full">
             <svg
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"

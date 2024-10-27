@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import 'aos/dist/aos.css'
 
 import { fontInter,  fontEuclidCircular} from '../lib/fonts'
 import { cn } from "@/lib/utils";

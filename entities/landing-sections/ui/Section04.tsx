@@ -88,7 +88,7 @@ export const Section04 = () => {
 
   return (
     <article className="container mx-auto mt-[65px]">
-      <div className="bg-primary py-[65px] px-[35px] max-lg:p-5 rounded-[20px] flex size-full relative max-md:flex-col-reverse">
+      <div data-aos="fade-up" className="bg-primary py-[65px] px-[35px] max-lg:p-5 rounded-[20px] flex size-full relative max-md:flex-col-reverse">
         <div>
           <Heading className="text-white  font-medium max-w-[630px] max-lg:max-w-[382px] max-lg:text-[22px]">
             Начните получать в 2-3 раза больше горячих лидов уже сегодня

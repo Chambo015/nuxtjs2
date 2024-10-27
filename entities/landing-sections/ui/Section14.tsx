@@ -29,9 +29,9 @@ export const Section14 = () => {
         <Accordion type="single" collapsible className="w-full">
           <div className="grid grid-cols-2 items-start gap-x-4 overflow-hidden max-lg:grid-cols-1">
             <div className="grid grid-cols-1 items-start shrink-0">
-              {ModelFAQ.slice(0, ModelFAQ.length / 2).map((item) => (
+              {ModelFAQ.slice(0, ModelFAQ.length / 2).map((item, idx) => (
                 <AccordionItem key={item.title} value={item.id.toString()}>
-                  <AccordionTrigger className="border border-[#E5E5E5] rounded-[20px] py-3 px-[15px] flex gap-[15px] items-center cursor-pointer h-[70px] max-sm:h-auto">
+                  <AccordionTrigger data-aos="fade-up" data-aos-delay={50 * (idx + 1)} className="border border-[#E5E5E5] rounded-[20px] py-3 px-[15px] flex gap-[15px] items-center cursor-pointer h-[70px] max-sm:h-auto">
                     <div className="bg-[#F9FAFB] size-[50px] rounded-full flex items-center justify-center text-primary text-[15px] shrink-0">
                       {item.icon}
                     </div>
@@ -49,9 +49,9 @@ export const Section14 = () => {
               ))}
             </div>
             <div className="grid grid-cols-1 items-start  shrink-0 max-lg:mt-0">
-              {ModelFAQ.slice(ModelFAQ.length / 2).map((item) => (
+              {ModelFAQ.slice(ModelFAQ.length / 2).map((item, idx) => (
                 <AccordionItem key={item.title} value={item.id.toString()}>
-                  <AccordionTrigger className="border border-[#E5E5E5] rounded-[20px] py-3 px-[15px] flex gap-[15px] items-center cursor-pointer h-[70px] max-sm:h-auto">
+                  <AccordionTrigger data-aos="fade-up" data-aos-delay={50 * (idx + 1)} className="border border-[#E5E5E5] rounded-[20px] py-3 px-[15px] flex gap-[15px] items-center cursor-pointer h-[70px] max-sm:h-auto">
                     <div className="bg-[#F9FAFB] size-[50px] rounded-full flex items-center justify-center text-primary text-[15px] shrink-0">
                       {item.icon}
                     </div>

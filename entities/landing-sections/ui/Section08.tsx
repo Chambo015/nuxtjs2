@@ -30,9 +30,9 @@ export const Section08 = () => {
               spaceBetween: 16,
             },
           }}>
-          {ModelSection08.map((item) => (
+          {ModelSection08.map((item, idx) => (
             <SwiperSlide key={item.note} className='!h-auto !self-stretch'>
-              <div className="border border-black/10 rounded-[20px] p-2.5 h-full">
+              <div data-aos="fade-up" data-aos-delay={50 * (idx + 1)} className="border border-black/10 rounded-[20px] p-2.5 h-full">
                 <div className="bg-primary/10 rounded-[20px] h-[130px] flex items-center justify-center text-[45px]">
                   {item.icon}
                 </div>

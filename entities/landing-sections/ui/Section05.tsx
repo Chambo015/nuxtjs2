@@ -7,12 +7,12 @@ export const Section05 = () => {
   return (
     <section className="container mx-auto mt-[65px]">
       <Heading>Почему это эффективно</Heading>
-      <p className="text-sm text-black mt-[15px]">
+      <p data-aos="fade-up" className="text-sm text-black mt-[15px]">
         До 70% посетителей сайтов не оставляют контактных данных. Мы помогаем вам связаться с ними
       </p>
       <ul className="grid grid-cols-3 gap-[15px] max-md:grid-cols-1 mt-[25px] max-lg:grid-cols-1">
-        {ModelSection05.map((item) => (
-          <li key={item.title} className="rounded-[15px] bg-[#F5F7F9] px-[35px] py-[30px] gap-[25px] max-md:p-[25px] flex flex-col items-center max-lg:flex-row max-md:flex-col">
+        {ModelSection05.map((item, idx) => (
+          <li data-aos="fade-up" data-aos-delay={50 * (idx + 1)} key={item.title} className="rounded-[15px] bg-[#F5F7F9] px-[35px] py-[30px] gap-[25px] max-md:p-[25px] flex flex-col items-center max-lg:flex-row max-md:flex-col">
             <Image
               src={item.img}
               width={345}

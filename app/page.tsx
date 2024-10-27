@@ -1,3 +1,7 @@
+"use client"
+
+import AOS from "aos";
+
 import { Button } from '@/components/ui/button';
 
 import { AnimationBackground } from '@/features/AnimationBackground/ui/AnimationBackground';
@@ -22,8 +26,17 @@ import {
 } from '@/entities/landing-sections';
 import { AppFooter } from '@/widgets/AppFooter/AppFooter';
 import Spline from '@splinetool/react-spline/next';
+import { useEffect } from "react";
 
 export default function Home() {
+
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 700, // values from 0 to 3000, with step 50ms
+      mirror: false
+    });
+  },[])
   return (
     <div className="font-euclid-circular w-full">
       <AnimationBackground>
