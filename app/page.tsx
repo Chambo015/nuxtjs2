@@ -25,11 +25,10 @@ import {
   Section14
 } from '@/entities/landing-sections';
 import { AppFooter } from '@/widgets/AppFooter/AppFooter';
-import Spline from '@splinetool/react-spline/next';
 import { useEffect } from "react";
 import Lottie from "react-lottie";
 
-import phoneAnimation from "../public/phone-animatio.json"
+import phoneAnimation from "../public/phone-animatio.json";
 
 export default function Home() {
 
