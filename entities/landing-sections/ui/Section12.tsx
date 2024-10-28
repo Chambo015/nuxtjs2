@@ -24,7 +24,7 @@ export const Section12 = () => {
           }
         });
       },
-      {threshold: 0.5} // 10% видимости
+      {threshold: 0.5} // 50% видимости
     );
 
     if (parrent.current) {
@@ -53,9 +53,9 @@ export const Section12 = () => {
           {/* @ts-ignore */}
           <Lottie options={defaultOptions} height={400} width={400} ref={lottieRef} />
         </div>
-        <div className="max-md:overflow-x-hidden">
+        <div data-aos="fade-up-left" className="max-md:overflow-x-hidden">
           <Heading>Сравнение с традиционными методами рекламы</Heading>
-          <div className="overflow-x-scroll">
+          <div className="overflow-x-auto">
             <div className="flex mt-5  min-w-[720px]">
               <ul className="text-black font-medium [&>li]:py-[14px] divide-y divide-[#E6E6E6] [&>li:first-child]:text-base [&>li]:text-sm grow [&>li]:pr-5">
                 <li>Параметр</li>

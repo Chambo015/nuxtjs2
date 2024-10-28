@@ -15,7 +15,7 @@ export const Section07 = () => {
     <section className="container mx-auto mt-[75px] ">
       <Heading className="max-w-[496px] md:hidden mb-4">Простое управление через личный кабинет</Heading>
       <div className="flex gap-[50px] max-md:flex-col-reverse max-md:gap-6">
-        <div>
+        <div data-aos="fade-up-right">
           <Heading className="max-w-[496px] max-md:hidden">Простое управление через личный кабинет</Heading>
           <ul className="space-y-4 mt-[25px]">
             {ModelSection07.map((item, idx) => (
@@ -38,7 +38,7 @@ export const Section07 = () => {
             ))}
           </ul>
         </div>
-        <div className="grid grid-cols-2 grow gap-5 min-w-[50%] max-lg:min-w-[35%] max-lg:grid-cols-1">
+        <div data-aos="flip-right" className="grid grid-cols-2 grow gap-5 min-w-[50%] max-lg:min-w-[35%] max-lg:grid-cols-1">
           <div
             className={cn(
               'rounded-[20px]  flex items-center justify-center py-8 px-9 transition-all duration-500 max-lg:h-auto max-lg:aspect-square max-lg:p-4 max-md:aspect-auto max-md:h-[225px]',

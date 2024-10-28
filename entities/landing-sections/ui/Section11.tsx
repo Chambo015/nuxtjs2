@@ -8,7 +8,7 @@ import {ModelSection11} from '../model';
 export const Section11 = () => {
   return (
     <section className="container mx-auto mt-[75px]">
-      <div className="flex gap-[100px] items-center container overflow-hidden max-md:flex-col-reverse max-lg:gap-8">
+      <div data-aos="fade-up" className="flex gap-[100px] items-center container overflow-hidden max-md:flex-col-reverse max-lg:gap-8">
         <div>
           <Heading>Встроенная удобная CRM система</Heading>
           <p className="text-black/80 mt-[15px]">
