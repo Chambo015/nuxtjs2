@@ -73,12 +73,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="absolute right-0 bottom-0 size-[900px] flex items-center justify-center translate-x-[20%] max-xl:translate-y-[30%] max-xl:translate-x-[20%] max-lg:translate-y-[20%] max-lg:translate-x-0 max-lg:h-[700px]  max-lg:w-full max-md:translate-y-[30%] pointer-events-none ">
+            <div className="absolute right-0 bottom-0 size-[900px] flex items-center justify-center translate-x-[20%] 
+            max-xl:translate-y-[30%] max-xl:translate-x-[20%] 
+            max-lg:translate-y-[20%] max-lg:translate-x-0 max-lg:h-[700px]  max-lg:w-full 
+            max-md:translate-y-[27%] pointer-events-none ">
               {/* <Spline
                 style={{background: 'none'}}
                 scene="https://prod.spline.design/UKqVR2cGwPCOgft2/scene.splinecode"
               /> */}
-              <div className="translate-x-[10%] translate-y-[20%]"><Lottie options={defaultOptions} height={500} width={500}   /></div>
+              <div className="translate-x-[10%] max-md:size-[300px] size-[500px] md:translate-y-[20%]"><Lottie options={defaultOptions}   /></div>
             </div>
           </section>
         </div>
