@@ -5,6 +5,7 @@ import {Slider} from '@/components/ui/slider';
 import Chip from './_ui/Chip';
 import {useMemo, useState} from 'react';
 import {Heading} from '@/components/ui/Heading';
+import { cn } from '@/lib/utils';
 
 const interpolate = (
 	number: number,
@@ -29,18 +30,18 @@ export const IdentificationCalculator = () => {
     const minCount = 200;
     const maxCount = 30000;
 
-    if (slider <= 20) {
-      return Math.round(interpolate(slider, 0, 20, 200, 500));
-    } else if (slider >= 20 && slider <= 40) {
-      return Math.round(interpolate(slider, 20, 40, 500, 2000));
-    } else if (slider >= 40 && slider <= 60) {
-      return Math.round(interpolate(slider, 40, 60, 2000, 5000));
-    } else if (slider >= 60 && slider <= 80) {
-      return Math.round(interpolate(slider, 60, 80, 5000, 10000));
-    } else if (slider >= 80) {
-      return Math.round(interpolate(slider, 80, 100, 10000, 30000));;
+    if (slider <= 16) {
+      return Math.round(interpolate(slider, 0, 16, 200, 500));
+    } else if (slider >= 16 && slider <= 33) {
+      return Math.round(interpolate(slider, 16, 33, 500, 2000));
+    } else if (slider >= 33 && slider <= 49) {
+      return Math.round(interpolate(slider, 33, 49, 2000, 5000));
+    } else if (slider >= 49 && slider <= 66) {
+      return Math.round(interpolate(slider, 49, 66, 5000, 10000));
+    } else if (slider >= 66 && slider <= 83) {
+      return Math.round(interpolate(slider, 66, 83, 10000, 30000));;
     } else {
-      return 1;
+      return 0;
     }
 
     return Math.round(minCount + (slider / 100) * (maxCount - minCount));
@@ -48,18 +49,18 @@ export const IdentificationCalculator = () => {
 
   const pricePerIdentification = useMemo(() => {
     // Определяем цену на основе значения slider
-    if (slider <= 20) {
+    if (slider <= 16) {
       return 45;
-    } else if (slider >= 20 && slider <= 40) {
+    } else if (slider >= 16 && slider <= 33) {
       return 40;
-    } else if (slider >= 40 && slider <= 60) {
+    } else if (slider >= 33 && slider <= 49) {
       return 35;
-    } else if (slider >= 60 && slider <= 80) {
+    } else if (slider >= 49 && slider <= 66) {
       return 30;
-    } else if (slider >= 80) {
+    } else if (slider >= 66 && slider <= 83) {
       return 25;
     } else {
-      return 1;
+      return 0;
     }
   }, [slider]);
 
@@ -102,6 +103,11 @@ export const IdentificationCalculator = () => {
       discount: '-44%',
       identifications: '5000 идент.'
     },
+    {
+      value: '',
+      discount: '',
+      identifications: ''
+    },
   ];
 
   return (
@@ -111,7 +117,7 @@ export const IdentificationCalculator = () => {
         <div data-aos="fade-up-right" className="flex grow items-center justify-center border border-white/20 rounded-[30px] py-[85px] max-lg:py-8 max-lg:px-3 max-lg:grow-0">
           <div className="bg-[#F5F7F9] p-[10px] rounded-[20px]">
             <div className="p-[10px]">
-              <p className="text-[#161616] font-medium text-lg">{identificationCount} идентификации</p>
+              <p className="text-[#161616] font-medium text-lg">{identificationCount > 0 ? `${identificationCount} идентификации`: 'По договоренности'}</p>
               <ul className='[&>li]:before:content-[url("/icons/check.svg")] [&>li]:before:absolute [&>li]:before:text-[20px] [&>li]:before:top-1/2 [&>li]:before:-translate-y-1/2 [&>li]:pl-[30px] [&>li]:relative [&>li]:before:left-0 [&>li]:before:size-5 mt-[15px] text-black [&>li]:text-sm [&>li]:leading-[20px] space-y-[15px]'>
                 <li>Управление источниками</li>
                 <li>Удобная выгрузка данных</li>
@@ -119,9 +125,9 @@ export const IdentificationCalculator = () => {
               </ul>
             </div>
             <div className="bg-[#E4ECF9] flex items-center h-[62px] px-5 rounded-[20px] justify-end gap-2.5 text-[#4280EF] min-w-[300px]">
-              <span className="mr-auto text-sm">Всего</span>
-              <span className="font-medium text-[22px] leading-tight">{totalCost} ₽</span>
-              <Chip className="bg-white text-xs font-medium">-{discount}%</Chip>
+              <span className="mr-auto text-sm">{totalCost > 0 ? 'Всего' : 'Цена'}</span>
+              <span className={cn("font-medium text-[22px] leading-tight", totalCost > 0 ? 'text-[22px] ' : 'text-xl')}>{totalCost > 0 ? totalCost : "от 12 до 20"} ₽</span>
+              <Chip className="bg-white text-xs font-medium">{totalCost > 0 ? `-${discount}%` : <span className='scale-150'>🔥</span> }</Chip>
             </div>
           </div>
         </div>
@@ -140,7 +146,7 @@ export const IdentificationCalculator = () => {
               className="w-full"
               onValueChange={(v) => setSlider(v[0])}
             />
-            <ul className="grid grid-cols-5 mt-[calc(-25px/2)]">
+            <ul className="grid grid-cols-6 mt-[calc(-25px/2)]">
               {points.map((p) => (
                 <li key={p.value}>
                   <div className="h-[25px] w-0.5 rounded-2xl bg-[#E6E6E6] mb-6 max-lg:mb-3"></div>
