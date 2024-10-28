@@ -44,7 +44,7 @@ export const ModelSection06 = [
     icon: <IconConstruction />,
     before: [
       {
-        label: "Потраченный бюджет",
+        label: "Бюджет",
         value: "55 000 ₽"
       },
       {
@@ -52,13 +52,13 @@ export const ModelSection06 = [
         value: "2 660"
       },
       {
-        label: "Стоимость лида",
+        label: "Стоимость",
         value: "3 500 ₽"
       },
     ],
     after: [
       {
-        label: "Потраченный бюджет",
+        label: "Бюджет",
         value: "55 000 ₽"
       },
       {
@@ -66,7 +66,7 @@ export const ModelSection06 = [
         value: "3 010"
       },
       {
-        label: "Стоимость лида",
+        label: "Стоимость",
         value: "700 ₽",
         discount: "-80%"
       },

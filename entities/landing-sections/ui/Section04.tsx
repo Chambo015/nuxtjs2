@@ -2,7 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/Heading";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import Lottie from "react-lottie";
+
+import graphicAnimation from '../../../public/gift-block.json';
 
 export const Section04 = () => {
   function findAngle(sx: number, sy: number, toX: number, toY: number) {
@@ -86,9 +89,45 @@ export const Section04 = () => {
     window.onresize = draw;
   }, []);
 
+  const parrent = useRef(null);
+  const lottieRef = useRef<Lottie>();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // @ts-ignore
+            lottieRef.current?.play(); // Start playing when visible
+          } else {
+            // @ts-ignore
+            lottieRef.current?.stop(); // Stop playing when out of view
+          }
+        });
+      },
+      {threshold: 0.5} // 50% видимости
+    );
+
+    if (parrent.current) {
+      observer.observe(parrent.current);
+    }
+
+    return () => {
+      if (parrent.current) {
+        observer.unobserve(parrent.current);
+      }
+    };
+  }, []);
+
+  const defaultOptions = {
+    loop: false,
+    autoplay: true, 
+    animationData: graphicAnimation,
+  };
+
   return (
     <article className="container mx-auto mt-[65px]">
-      <div data-aos="fade-up" className="bg-primary py-[65px] px-[35px] max-lg:p-5 rounded-[20px] flex size-full relative max-md:flex-col-reverse">
+      <div data-aos="fade-up" className="bg-primary md:hidden py-[65px] px-[35px] max-lg:p-5 rounded-[20px] flex size-full relative max-md:flex-col-reverse">
         <div>
           <Heading className="text-white  font-medium max-w-[630px] max-lg:max-w-[382px] max-lg:text-[22px]">
             Начните получать в 2-3 раза больше горячих лидов уже сегодня
@@ -143,6 +182,10 @@ export const Section04 = () => {
           </div>
         </div>
         <canvas id="myCanvas" className="absolute inset-0 size-full max-md:hidden"></canvas>
+      </div>
+      <div  ref={parrent} className="max-md:hidden">
+        {/* @ts-ignore */}
+      <Lottie options={defaultOptions} ref={lottieRef}  />
       </div>
     </article>
   );

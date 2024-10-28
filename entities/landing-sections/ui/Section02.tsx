@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import DashboardMonitorIcon from '@/shared/icons/dashboard-monitor.svg';
 import SiteIcon from '@/shared/icons/site.svg';
 import TimeTwentyFourIcon from '@/shared/icons/time-24.svg';
@@ -8,14 +8,53 @@ import {Heading} from '@/components/ui/Heading';
 import Image from 'next/image';
 import {cn} from '@/lib/utils';
 
+import graphicAnimation from '../../../public/block-2.json';
+import Lottie from 'react-lottie';
+
 export const Section02 = () => {
   const [activeTab, setActiveTab] = useState(1);
+
+  const parrent = useRef(null);
+  const lottieRef = useRef<Lottie>();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // @ts-ignore
+            lottieRef.current?.play(); // Start playing when visible
+          } else {
+            // @ts-ignore
+            lottieRef.current?.stop(); // Stop playing when out of view
+          }
+        });
+      },
+      {threshold: 0.5} // 50% видимости
+    );
+
+    if (parrent.current) {
+      observer.observe(parrent.current);
+    }
+
+    return () => {
+      if (parrent.current) {
+        observer.unobserve(parrent.current);
+      }
+    };
+  }, []);
+
+  const defaultOptions = {
+    loop: false,
+    autoplay: true, 
+    animationData: graphicAnimation,
+  };
   return (
     <section id="how" className="container mx-auto mt-[75px] ">
       <Heading data-aos="fade-up-right">Как это работает</Heading>
       <div className="flex gap-[50px] items-center mt-[25px] max-md:flex-col">
 
-        <div  data-aos="flip-left" className="grid grid-cols-2 max-lg:grid-cols-1 shrink-0 grow gap-5 min-w-[50%] max-lg:min-w-[35%] max-md:w-full max-md:h-[250px]">
+        <div  data-aos="flip-left" className="grid lg:hidden grid-cols-2 max-lg:grid-cols-1 shrink-0 grow gap-5 min-w-[50%] max-lg:min-w-[35%] max-md:w-full max-md:h-[250px]">
           <div
             className={cn(
               'rounded-[20px]  flex items-center justify-center py-8 px-9 transition-all duration-500 relative overflow-hidden h-[300px] max-lg:h-auto max-lg:aspect-square max-md:aspect-auto',
@@ -58,6 +97,10 @@ export const Section02 = () => {
               className="object-contain shadow-md rounded-[10px]"
             />
           </div>
+        </div>
+        <div ref={parrent} className='min-w-[50%] max-lg:hidden'>
+          {/* @ts-ignore */}
+          <Lottie options={defaultOptions} ref={lottieRef}  />
         </div>
 
         <ul data-aos="fade-up-left" className="space-y-4">
