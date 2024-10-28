@@ -27,6 +27,9 @@ import {
 import { AppFooter } from '@/widgets/AppFooter/AppFooter';
 import Spline from '@splinetool/react-spline/next';
 import { useEffect } from "react";
+import Lottie from "react-lottie";
+
+import phoneAnimation from "../public/phone-animatio.json"
 
 export default function Home() {
 
@@ -37,10 +40,18 @@ export default function Home() {
       mirror: false
     });
   },[])
+
+  const defaultOptions = {
+    loop: true, // Устанавливает, зациклена ли анимация
+    autoplay: true, // Автозапуск отключен, чтобы анимация начиналась только при видимости
+    animationData: phoneAnimation,
+  };
+
+  
   return (
     <div className="font-euclid-circular w-full">
       <AnimationBackground>
-        <div className="min-h-[785px] max-xl:min-h-[700px] max-md:min-h-[700px] hero-section pt-7 flex flex-col z-10 relative w-full max-md:pt-4 overflow-hidden max-[480px]:min-h-[750px]">
+        <div className="min-h-[785px]  max-md:min-h-[700px] hero-section pt-7 flex flex-col z-10 relative w-full max-md:pt-4 overflow-hidden max-[480px]:min-h-[800px] max-[380px]:min-h-[850px]">
           <div className="shrink-0">
             <AppHeader />
           </div>
@@ -63,19 +74,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* <Image
-              src="/image/hero.png"
-              width={920}
-              height={920}
-              alt="cubs"
-              quality={100}
-              className="absolute right-0 bottom-0 pointer-events-none "
-            /> */}
-            <div className="absolute right-0 bottom-0 size-[900px] translate-x-[20%] max-xl:translate-y-[20%] max-xl:translate-x-[45%] max-lg:translate-x-0 max-lg:h-[700px]  max-lg:w-full max-sm:translate-y-[30%] pointer-events-none ">
-              <Spline
+            <div className="absolute right-0 bottom-0 size-[900px] flex items-center justify-center translate-x-[20%] max-xl:translate-y-[30%] max-xl:translate-x-[20%] max-lg:translate-y-[20%] max-lg:translate-x-0 max-lg:h-[700px]  max-lg:w-full max-md:translate-y-[30%] pointer-events-none ">
+              {/* <Spline
                 style={{background: 'none'}}
                 scene="https://prod.spline.design/UKqVR2cGwPCOgft2/scene.splinecode"
-              />
+              /> */}
+              <div className="translate-x-[10%] translate-y-[20%]"><Lottie options={defaultOptions} height={500} width={500}   /></div>
             </div>
           </section>
         </div>
