@@ -1,6 +1,7 @@
 'use client';
 
 import {Button} from '@/components/ui/button';
+import IconFire from "@/shared/icons/fire.svg"
 import {Slider} from '@/components/ui/slider';
 import Chip from './_ui/Chip';
 import {useMemo, useState} from 'react';
@@ -127,7 +128,7 @@ export const IdentificationCalculator = () => {
             <div className="bg-[#E4ECF9] flex items-center h-[62px] px-5 rounded-[20px] justify-end gap-2.5 text-[#4280EF] min-w-[300px]">
               <span className="mr-auto text-sm">{totalCost > 0 ? 'Всего' : 'Цена'}</span>
               <span className={cn("font-medium text-[22px] leading-tight", totalCost > 0 ? 'text-[22px] ' : 'text-xl')}>{totalCost > 0 ? totalCost : "от 12 до 20"} ₽</span>
-              <Chip className="bg-white text-xs font-medium">{totalCost > 0 ? `-${discount}%` : <span className='scale-150'>🔥</span> }</Chip>
+              <Chip className="bg-white text-xs font-medium">{totalCost > 0 ? `-${discount}%` : <IconFire /> }</Chip>
             </div>
           </div>
         </div>

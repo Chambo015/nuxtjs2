@@ -127,7 +127,7 @@ export const Section06 = () => {
                         <ul>
                           {item.after.map((a) => (
                             <li key={a.label} className="flex flex-col justify-between">
-                              <p className="text-primary text-sm">{a.label}</p>
+                              <p className="text-primary text-sm leading-tight">{a.label}</p>
                               <p
                                 className={cn(
                                   'text-primary text-[22px] leading-tight font-medium mt-[5px] text-nowrap',
