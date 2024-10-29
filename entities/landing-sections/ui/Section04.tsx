@@ -5,7 +5,7 @@ import { Heading } from "@/components/ui/Heading";
 import React, { useEffect, useRef } from "react";
 import Lottie from "react-lottie";
 
-import graphicAnimation from '../../../public/gift-block.json';
+import graphicAnimation from '../../../public/Block-4-3.json';
 
 export const Section04 = () => {
   function findAngle(sx: number, sy: number, toX: number, toY: number) {
@@ -136,12 +136,12 @@ export const Section04 = () => {
             className="text-white text-sm leading-[22px] max-w-[530px] mt-[15px] max-lg:max-w-[430px]"
             id="start1"
           >
-            Зарегистрируйтесь прямо сейчас и получите 40 идентификаций
+            Зарегистрируйтесь прямо сейчас и получите 30 идентификаций
             бесплатно, чтобы проверить как это работает
           </p>
           <Button
             variant={"link"}
-            className="bg-white text-primary max-w-[315px] w-[315px] mt-[15px] underline max-sm:w-full"
+            className="bg-white text-primary max-w-[315px] w-[315px] mt-[15px] max-sm:w-full"
           >
             Попробовать бесплатно
           </Button>
@@ -173,7 +173,7 @@ export const Section04 = () => {
             </svg>
             <div className="text-center text-xl font-medium max-lg:text-[9px] max-lg:leading-tight">
               <p className="text-primary pb-1 border-b-2 border-primary">
-                Плюс 30 идентификаций в подарок
+                30 идентификаций в подарок
               </p>
               <p className="text-[#434343]/80 font-normal pt-0.5">
                 Получите сразу после регистрации
