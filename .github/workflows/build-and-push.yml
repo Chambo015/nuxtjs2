@@ -1,12 +1,6 @@
 name: Build and Push Docker Image to Yandex Cloud using Docker Compose
 
 on:
-  # Trigger the workflow when a pull request is merged into the main branch
-  pull_request:
-    branches:
-      - main
-    types:
-      - closed
   push:
     branches:
       - main
