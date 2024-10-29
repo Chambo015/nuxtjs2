@@ -139,12 +139,14 @@ export const Section04 = () => {
             Зарегистрируйтесь прямо сейчас и получите 30 идентификаций
             бесплатно, чтобы проверить как это работает
           </p>
-          <Button
-            variant={"link"}
-            className="bg-white text-primary max-w-[315px] w-[315px] mt-[15px] max-sm:w-full"
-          >
-            Попробовать бесплатно
-          </Button>
+          <a href="https://ai-up.ru/app/sign-up">
+            <Button
+              variant={"link"}
+              className="bg-white text-primary max-w-[315px] w-[315px] mt-[15px] max-sm:w-full"
+            >
+              Попробовать бесплатно
+            </Button>
+          </a>
         </div>
         <div className="flex items-center justify-center grow max-md:h-[120px]">
           <div
@@ -185,7 +187,7 @@ export const Section04 = () => {
       </div>
       <div  ref={parrent} className="max-md:hidden">
         {/* @ts-ignore */}
-      <Lottie options={defaultOptions} ref={lottieRef}  />
+      <a href="https://ai-up.ru/app/sign-up"><Lottie options={defaultOptions} ref={lottieRef}  /></a>
       </div>
     </article>
   );

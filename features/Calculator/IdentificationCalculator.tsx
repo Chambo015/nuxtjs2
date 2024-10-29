@@ -161,7 +161,7 @@ export const IdentificationCalculator = () => {
           </div>
 
           <div className="flex gap-4 items-center mt-4 max-lg:flex-col max-lg:items-start max-lg:gap-3 max-lg:mt-9">
-            <Button className="font-medium text-sm max-md:w-full">Попробовать бесплатно</Button>
+            <a href="https://ai-up.ru/app/sign-up"><Button className="font-medium text-sm max-md:w-full">Попробовать бесплатно</Button></a>
             <div className="flex flex-col text-sm">
               <span className="text-white">Сразу после регистрации начислим</span>
               <span className="text-[#4280EF]">30 идентификаций бесплатно.</span>

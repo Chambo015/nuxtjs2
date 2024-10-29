@@ -6,14 +6,14 @@ import TelegramIcon from "@/shared/icons/telegram.svg"
 export const Contacts = () => {
   return (
     <ul className='flex text-white items-center gap-[15px]'>
-      <li className='flex items-center gap-2.5'>
+      {/* <li className='flex items-center gap-2.5'>
         <PhoneIcon width="15" height="15" /><span>+7 (945) 487-44-59</span>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <WhatsappIcon />
-      </li>
+      </li> */}
       <li>
-        <TelegramIcon />
+        <a href='https://t.me/aiup_news'><TelegramIcon /></a>
       </li>
     </ul>
   )

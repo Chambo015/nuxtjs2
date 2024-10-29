@@ -20,7 +20,7 @@ export const Section13 = () => {
                 <p className='text-white/60 text-sm mt-1'>{item.note}</p>
               </div>)}
           </div>
-          <div className='max-w-[320px] mx-auto mt-4'><Button className="text-primary bg-white hover:bg-white/80 w-full text-center inline-block">Присоединится сейчас </Button></div>
+          <div className='max-w-[320px] mx-auto mt-4'><a href="https://ai-up.ru/app/sign-up"><Button className="text-primary bg-white hover:bg-white/80 w-full text-center inline-block">Присоединится сейчас </Button></a></div>
         </div>
       </div>
 

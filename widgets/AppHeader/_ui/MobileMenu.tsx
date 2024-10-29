@@ -15,7 +15,6 @@ export function MobileMenu({contacts, nav, profile}: MobileMenuProps) {
     <Sheet >
       <SheetTrigger asChild>
         <Button
- 
           variant="ghost"
           size="icon"
           className="bg-transparent hover:bg-transparent">
