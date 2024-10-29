@@ -34,5 +34,5 @@ jobs:
           CR_REPOSITORY: landing
           IMAGE_TAG: latest
         run: |
-          docker-compose -f docker-compose.yaml build ui-prod
-          docker-compose -f docker-compose.yaml push ui-prod
+          docker-compose -f docker-compose.yaml build landing-prod
+          docker-compose -f docker-compose.yaml push landing-prod
