@@ -7,7 +7,7 @@ export const Section13 = () => {
   return (
     <section className="container mx-auto mt-[75px]">
       <div className='bg-black relative overflow-hidden rounded-[20px]'>
-        <div className='absolute bg-[url("/image/sec13.svg")] bg-cover inset-0 blur-[150px] max-md:bg-[length:auto_100%] bg-no-repeat max-md:bg-[10%]'></div>
+        <div className='absolute bg-[url("/image/sec13.svg")] bg-cover inset-0 blur-[150px] max-md:bg-[length:auto_100%] bg-no-repeat max-md:bg-[10%] max-md:hidden'></div>
         <div className='relative z-10 p-[35px]'>
           <Heading className='text-center text-white max-w-[830px] mx-auto'>Присоединяйтесь к списку ожидания и получите преимущество!</Heading>
           <p className='text-white/80 text-sm text-center mt-2.5'>Не упустите шанс быть среди первых, кто опробует наш инновационный сервис и увеличит продажи без дополнительных затрат на рекламу.</p>
