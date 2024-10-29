@@ -1,0 +1,35 @@
+name: Build and Push Docker Image to Yandex Cloud using Docker Compose
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Login to Yandex Cloud Container Registry
+        id: login-cr
+        uses: yc-actions/yc-cr-login@v2
+        with:
+          yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install docker-compose
+
+      - name: Build and push with Docker Compose
+        env:
+          CR_REGISTRY: crpqo933sodpue4v0r0n
+          CR_REPOSITORY: landing
+          IMAGE_TAG: latest
+        run: |
+          docker-compose -f docker-compose.yaml build landing-prod
+          docker-compose -f docker-compose.yaml push landing-prod
